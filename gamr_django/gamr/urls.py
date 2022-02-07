@@ -10,8 +10,17 @@ urlpatterns = [
          views.UserNameLookup.as_view(), name='user_detail'),
 
     # GAMES
-    path('games/', views.GameList.as_view(), name='games_list'),
+    path('games/', views.GameList.as_view(), name='game_list'),
     path('games/<int:pk>', views.GameDetail.as_view(), name='game_detail'),
+
+    # GENRES
+    path('genres/', views.GenreList.as_view(), name='genre_list'),
+    path('genres/<int:pk>', views.GenreDetail.as_view(), name='genre_detail'),
+
+    # PLATFORMS
+    path('platforms/', views.PlatformList.as_view(), name='platform_list'),
+    path('platforms/<int:pk>', views.PlatformDetail.as_view(),
+         name='platform_detail'),
 
     # REVIEWS
     path('reviews/', views.ReviewList.as_view(), name='review_list'),

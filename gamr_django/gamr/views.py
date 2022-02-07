@@ -29,7 +29,7 @@ class PlatformList(generics.ListCreateAPIView):
 
 
 class PlatformDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Game.objects.all()
+    queryset = Platform.objects.all()
     serializer_class = PlatformSerializer
 
 

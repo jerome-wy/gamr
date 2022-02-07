@@ -1,5 +1,8 @@
 <!-- accounts/templates/accounts/logout.html -->
-{% extends 'tunr/base.html' %} {% block content %}
+{% comment %} {% extends 'tunr/base.html' %} {% block content %} {% endcomment
+%}
+
 <p>Logged out!</p>
 <a href="{% url 'login' %}">Click here to login again.</a>
-{% endblock %}
+
+{% comment %} {% endblock %} {% endcomment %}
