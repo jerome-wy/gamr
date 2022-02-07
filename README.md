@@ -1,13 +1,13 @@
 # **gamr.** | _Stop multitasking. Start living._
 
-![Image](https://i.imgur.com/yC3yFq7.png)
+<!-- ![Image](https://i.imgur.com/yC3yFq7.png) -->
 
 ## **Date:** February 7, 2022
 
 ## **Author:** **Jerome Wy** [LinkedIn](https://www.linkedin.com/in/jerome-wy/) | [GitHub](https://github.com/jerome-wy)
 
 ## **Description:**
-gamr is a Full Stack Web Application that uses Python with the Django Framework for the Back-End and uses React and React Libraries for the Front-End
+gamr is a Full Stack Web Application that uses Python with the Django Framework for the Back-End and uses React and React Libraries for the Front-End. 
 
 ## **Technologies Used:**
 
