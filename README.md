@@ -1,4 +1,4 @@
-# **gamr.** | _Stop multitasking. Start living._
+# **gamr.** | So many games. So little time.
 
 <!-- ![Image](https://i.imgur.com/yC3yFq7.png) -->
 
