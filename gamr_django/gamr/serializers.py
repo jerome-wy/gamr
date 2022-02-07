@@ -2,8 +2,6 @@ from sysconfig import get_path_names
 from rest_framework import serializers
 from .models import User, Game, Review, Platform, Genre
 
-# NEED TO UPDATE!!!
-
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     games = serializers.HyperlinkedRelatedField(
