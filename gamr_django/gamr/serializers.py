@@ -97,5 +97,5 @@ class ReviewSerializer(serializers.HyperlinkedModelSerializer):
     )
 
     class Meta:
-        model: Review
+        model = Review
         fields = ('id', 'game', 'game_id', 'game_url', 'title', 'description')
