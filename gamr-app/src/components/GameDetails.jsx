@@ -1,22 +1,30 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import ReviewForm from './ReviewForm';
+import Review from './Review';
 
 export default function GameDetails(props) {
 	const [gameDetails, setGameDetails] = useState({});
 
 	useEffect(() => {
-		const getGames = async () => {
-			const res = await axios.get(`http://localhost:8000/games/1`);
+		const getGameDetails = async () => {
+			const res = await axios.get(
+				`http://localhost:8000/games/${props.match.params.id}`
+			);
 			setGameDetails(res.data);
 		};
-		getGames();
+		getGameDetails();
 	}, [props.match.params.id]);
 	console.log(gameDetails);
 
 	return (
 		<div className='GameDetails-container'>
-			<div className='gamedetails-cover'>
+			<div
+				className='gamedetails-cover'
+				onClick={() =>
+					props.history.push(
+						`/gamedetails/${props.match.params.id}/reviews/${props.match.params.id}`
+					)
+				}>
 				<img src={gameDetails.cover} alt={gameDetails.title} />
 				{gameDetails.title}
 				<br />
@@ -35,10 +43,6 @@ export default function GameDetails(props) {
 				<div className='storage'>
 					Storage Requirements: {gameDetails.storage_req}
 				</div>
-			</div>
-
-			<div className='gamedetails-review'>
-				<ReviewForm />
 			</div>
 		</div>
 	);

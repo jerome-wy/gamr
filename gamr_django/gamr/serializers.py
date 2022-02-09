@@ -92,10 +92,6 @@ class ReviewSerializer(serializers.HyperlinkedModelSerializer):
         source='game'
     )
 
-    game_url = serializers.ModelSerializer.serializer_url_field(
-        view_name='game_detail'
-    )
-
     class Meta:
         model = Review
-        fields = ('id', 'game', 'game_id', 'game_url', 'title', 'description')
+        fields = ('id', 'game', 'game_id', 'title', 'description')

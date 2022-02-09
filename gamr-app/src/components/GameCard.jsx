@@ -1,8 +1,6 @@
 import React from 'react';
 
 export default function GameCard(props) {
-	console.log(props);
-
 	return (
 		<div className='GameCard'>
 			<div className='game-card' onClick={props.onClick}>

@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export default function ReviewForm(props) {
+export default function Review(props) {
 	const [reviews, setReviews] = useState([]);
 	useEffect(() => {
-		const getGames = async () => {
-			const res = await axios.get(`http://localhost:8000/reviews/1`);
+		const getReviews = async () => {
+			const res = await axios.get(
+				`http://localhost:8000/reviews/${props.match.params.id}`
+			);
 			setReviews(res.data);
 		};
-		getGames();
+		getReviews();
 	}, [props.match.params.id]);
-	console.log(reviews);
+	console.log(props);
 
-	return <div className='ReviewForm-container'>Reviews:</div>;
+	// reviews.id should match game_id
+
+	return <div className='ReviewForm-container'>Reviews: {reviews.title}</div>;
 }
