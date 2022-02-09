@@ -54,8 +54,3 @@ div.game-card-details > h3 {
 
 div.game-card-details > b {
 }
-@media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 20s linear;
-	}
-}
