@@ -1,7 +1,5 @@
 from rest_framework import generics, status
-from rest_framework.decorators import action
-from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
+from rest_framework.authtoken.models import Token
 from .serializers import UserSerializer, GameSerializer, ReviewSerializer, PlatformSerializer, GenreSerializer
 from .models import User, Game, Review, Platform, Genre
 # Create your views here.

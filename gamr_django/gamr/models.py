@@ -18,7 +18,7 @@ class Game(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='games')
     title = models.CharField(max_length=50)
-    description = models.TextField(max_length=100)
+    description = models.TextField(max_length=2000)
     platform_logo = models.CharField(max_length=150)
     RATING_CHOICES = (
         (1, 1),

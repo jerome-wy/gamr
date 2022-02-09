@@ -2,8 +2,6 @@ from sysconfig import get_path_names
 from rest_framework import serializers
 from .models import User, Game, Review, Platform, Genre
 
-# NEED TO UPDATE!!!
-
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     games = serializers.HyperlinkedRelatedField(
@@ -99,5 +97,5 @@ class ReviewSerializer(serializers.HyperlinkedModelSerializer):
     )
 
     class Meta:
-        model: Review
+        model = Review
         fields = ('id', 'game', 'game_id', 'game_url', 'title', 'description')
