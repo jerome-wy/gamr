@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Review from './Review';
+import ViewReviews from './ViewReviews';
 
 export default function GameDetails(props) {
 	const [gameDetails, setGameDetails] = useState({});
@@ -18,14 +18,16 @@ export default function GameDetails(props) {
 
 	return (
 		<div className='GameDetails-container'>
-			<div
-				className='gamedetails-cover'
-				onClick={() =>
-					props.history.push(
-						`/gamedetails/${props.match.params.id}/reviews/${props.match.params.id}`
-					)
-				}>
-				<img src={gameDetails.cover} alt={gameDetails.title} />
+			<div className='gamedetails-cover'>
+				<img
+					src={gameDetails.cover}
+					alt={gameDetails.title}
+					onClick={() =>
+						props.history.push(
+							`/gamedetails/${gameDetails.id}/reviews/${props.match.params.id}`
+						)
+					}
+				/>
 				{gameDetails.title}
 				<br />
 				{gameDetails.rating}

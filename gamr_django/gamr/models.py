@@ -14,47 +14,7 @@ class User(models.Model):
         return self.username
 
 
-class Game(models.Model):
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='games')
-    title = models.CharField(max_length=50)
-    description = models.TextField(max_length=2000)
-    platform_logo = models.CharField(max_length=150)
-    RATING_CHOICES = (
-        (1, 1),
-        (1.5, 1.5),
-        (2, 2),
-        (2.5, 2.5),
-        (3, 3),
-        (3.5, 3.5),
-        (4, 4),
-        (4.5, 4.5),
-        (5, 5),
-        (5.5, 5.5),
-        (6, 6),
-        (6.5, 6.5),
-        (7, 7),
-        (7.5, 7.5),
-        (8, 8),
-        (8.5, 8.5),
-        (9, 9),
-        (9.5, 9.5),
-        (10, 10)
-    )
-    rating = models.IntegerField(choices=RATING_CHOICES)
-    release_date = models.DateField()
-    developer = models.CharField(max_length=50)
-    storage_req = models.CharField(max_length=20)
-    trailer = models.CharField(max_length=150)
-    cover = models.CharField(max_length=150)
-
-    def __str__(self):
-        return self.title
-
-
 class Genre(models.Model):
-    game = models.ForeignKey(
-        Game, on_delete=models.CASCADE, related_name='genres', null=True)
     GENRE_CHOICES = (
         ('Action', 'Action'),
         ('Action-Adventure', 'Action-Adventure'),
@@ -78,8 +38,6 @@ class Genre(models.Model):
 
 
 class Platform(models.Model):
-    genre = models.ForeignKey(
-        Genre, on_delete=models.CASCADE, related_name='platforms', null=True)
     PLATFORM_CHOICES = (
         ('PS', 'PlayStation'),
         ('PS2', 'PlayStation 2'),
@@ -109,9 +67,29 @@ class Platform(models.Model):
         return self.platform
 
 
+class Game(models.Model):
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='games', null=True)
+    genres = models.ManyToManyField(Genre)
+    platforms = models.ManyToManyField(Platform)
+    title = models.CharField(max_length=50)
+    description = models.TextField(max_length=2000)
+    release_date = models.DateField()
+    developer = models.CharField(max_length=50)
+    storage_req = models.CharField(max_length=20)
+    trailer = models.CharField(max_length=150)
+    cover = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.title
+
+
 class Review(models.Model):
     game = models.ForeignKey(
-        Game, on_delete=models.CASCADE, related_name='reviews')
+        Game, on_delete=models.CASCADE, related_name='reviews', null=True)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='reviews', null=True)
+    rating = models.IntegerField()
     title = models.CharField(max_length=50)
     description = models.TextField(max_length=300)
 

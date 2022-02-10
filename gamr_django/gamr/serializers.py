@@ -35,10 +35,15 @@ class GameSerializer(serializers.HyperlinkedModelSerializer):
         view_name='game_detail'
     )
 
+    # reviews = serializers.PrimaryKeyRelatedField(
+    #     queryset=Review.objects.all(),
+    #     source='review'
+    # )
+
     class Meta:
         model = Game
         fields = ('id', 'user', 'user_id', 'game_url',
-                  'title', 'description', 'platform_logo', 'rating', 'release_date', 'developer', 'storage_req', 'trailer', 'cover')
+                  'title', 'description', 'release_date', 'developer', 'storage_req', 'trailer', 'cover')
 
 
 class GenreSerializer(serializers.HyperlinkedModelSerializer):
@@ -92,6 +97,12 @@ class ReviewSerializer(serializers.HyperlinkedModelSerializer):
         source='game'
     )
 
+    user_id = serializers.PrimaryKeyRelatedField(
+        queryset=User.objects.all(),
+        source='user'
+    )
+
     class Meta:
         model = Review
-        fields = ('id', 'game', 'game_id', 'title', 'description')
+        fields = ('id', 'game', 'game_id', 'rating',
+                  'user_id', 'title', 'description')
