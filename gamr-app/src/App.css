@@ -1,5 +1,7 @@
 body {
 	margin: 0;
+	/* background-color: black;
+	color: white; */
 }
 
 .App {
@@ -48,6 +50,132 @@ div.cover-div > img {
 	margin: 1rem;
 }
 
+/* SIGNIN ---------------------- */
+.SignIn-container {
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.SignIn-container > h1 {
+	font-family: Roboto;
+	font-size: 5rem;
+	font-weight: bold;
+	margin-bottom: 0.3em;
+}
+
+.signin-text {
+	font-size: 0.7rem;
+	font-family: Roboto;
+	font-weight: bold;
+}
+
+.signin-input-username {
+	border: solid 1px lightgray;
+	border-radius: 0.25em;
+	padding: 0.6em;
+	margin: 0.25em;
+	width: 300px;
+	height: 35px;
+}
+
+.signin-input-username::placeholder {
+	color: lightgray;
+}
+
+.signin-btn {
+	background-color: black;
+	color: white;
+	border-radius: 0.25em;
+	width: 50%;
+	border: solid 1px lightgray;
+	font-family: Roboto;
+	font-weight: bold;
+	transition: 0.7s;
+	margin: 0.4em;
+	height: 35px;
+}
+
+.signin-btn:hover {
+	background-color: green;
+	color: white;
+	transition: 0.7s;
+	width: 100%;
+}
+
+.signin-signup-btn {
+	background-color: rgb(56, 56, 240);
+	color: white;
+	border-radius: 0.25em;
+	width: 100%;
+	border: solid 1px lightgray;
+	font-family: Roboto;
+	font-weight: bold;
+	transition: 0.7s;
+	margin: 0.4em;
+	height: 35px;
+}
+
+.signin-signup-btn:hover {
+	background-color: green;
+	color: white;
+	transition: 0.7s;
+	width: 150%;
+	border: transparent;
+}
+
+.signup-btn {
+	background-color: black;
+	color: white;
+	border-radius: 0.25em;
+	width: 50%;
+	border: solid 1px lightgray;
+	font-family: Roboto;
+	font-weight: bold;
+	transition: 0.7s;
+	margin: 0.4em;
+	height: 35px;
+}
+
+.signup-btn:hover {
+	background-color: rgb(47, 47, 240);
+	color: white;
+	transition: 0.7s;
+	width: 100%;
+	border: transparent;
+}
+
+.signin-input-username-div {
+	font-family: Roboto;
+	font-weight: bold;
+	font-size: 0.5em;
+	border: solid 1px red;
+	width: 100%;
+}
+
+.social-auth-icons-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+li {
+	list-style: none;
+	display: inline;
+	margin: 1em;
+}
+
+.signin-line-divider {
+	background-color: lightgray;
+	width: 15em;
+	height: 0.1em;
+	margin: 1em;
+}
 /* GAMECARD -----------------  */
 div.game-card-details > h3 {
 }

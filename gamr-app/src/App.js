@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar';
@@ -8,32 +8,40 @@ import ViewReviews from './components/ViewReviews';
 import ReviewCreate from './components/ReviewCreate';
 import ReviewUpdate from './components/ReviewUpdate';
 import ReviewCard from './components/ReviewCard';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
+import Home from './pages/Home';
 
 function App() {
+	const [loggedIn, setLoggedIn] = useState(true);
+
 	return (
 		<div className='App'>
-			<NavBar />
+			{!loggedIn ? <NavBar /> : ''}
 			<Switch>
 				Hello from App.js!
 				<Route>
-					{/* <ViewGames /> */}
-					{/* <Route path='/' component={ViewGames} /> */}
 					<Route path='/viewgames' component={ViewGames} />
 					<Route exact path='/gamedetails/:id' component={GameDetails} />
 					<Route
 						exact
-						path='/gamedetails/:id/reviews/:id'
+						path='/gamedetails/:id/reviews/'
 						component={ViewReviews}
 					/>
 					<Route
-						path='/gamedetails/:id/reviews/:id/reviewcreate'
+						path='/gamedetails/:id/reviewcreate/'
 						component={ReviewCreate}
 					/>
 					<Route
-						path='/gamedetails/:id/reviews/:id/reviewupdate'
+						path='/gamedetails/:id/reviewupdate/'
 						component={ReviewUpdate}
 					/>
-					<Route path='/gamedetails/:id/reviews/:id' component={ReviewCard} />
+					<Route path='/gamedetails/:id/reviews/' component={ReviewCard} />
+
+					<Route exact path='/' component={Home} />
+					<Route path='/signin' component={SignIn} />
+
+					<Route path='/signup' component={SignUp} />
 				</Route>
 			</Switch>
 		</div>

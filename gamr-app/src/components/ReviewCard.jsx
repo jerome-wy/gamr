@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { IoPencilSharp } from 'react-icons/io5';
 
 export default function ReviewCard(props) {
-	console.log(props);
+	console.log('PROPS FROM REVIEW CARD :', props);
 	return (
 		<div className='ReviewCard-container'>
 			<div className='review-card-details' key={props.game_id}>

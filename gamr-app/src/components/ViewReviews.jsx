@@ -8,11 +8,10 @@ export default function ViewReview(props) {
 	const [reviews, setReviews] = useState([]);
 	const [reviewMatch, setReviewMatch] = useState(false);
 	const [reviewIndex, setReviewIndex] = useState(false);
+	const [checkReviews, setCheckReviews] = useState(false);
 	useEffect(() => {
 		const getReviewsById = async () => {
-			const res = await axios.get(
-				`http://localhost:8000/reviews/${props.match.params.id}`
-			);
+			const res = await axios.get(`http://localhost:8000/reviews/`);
 			setReviews(res.data);
 		};
 		getReviewsById();
@@ -23,9 +22,7 @@ export default function ViewReview(props) {
 		<div
 			className='ReviewForm-container'
 			onClick={() => {
-				props.history.push(
-					`/gamedetails/${reviews.game_id}/reviews/${reviews.id}/reviewcreate`
-				);
+				props.history.push(`/gamedetails/${reviews.game_id}/reviewcreate`);
 			}}>
 			<h2>Write a Review!</h2>
 			<h2>REVIEWS</h2>
@@ -35,11 +32,12 @@ export default function ViewReview(props) {
 					key={reviews.id}
 					{...reviews}
 					game_id={reviews.game_id}
+					rating={reviews.rating}
 					title={reviews.title}
 					description={reviews.description}
 					onClick={() =>
 						props.history.push(
-							`/gamedetails/${reviews.game_id}/reviews/${props.match.params.id}}`
+							`/gamedetails/${reviews.game_id}/reviews/${reviews.id}}`
 						)
 					}
 				/>

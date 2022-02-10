@@ -23,9 +23,7 @@ export default function GameDetails(props) {
 					src={gameDetails.cover}
 					alt={gameDetails.title}
 					onClick={() =>
-						props.history.push(
-							`/gamedetails/${gameDetails.id}/reviews/${props.match.params.id}`
-						)
+						props.history.push(`/gamedetails/${gameDetails.id}/reviews/`)
 					}
 				/>
 				{gameDetails.title}
