@@ -159,5 +159,6 @@ CORS_ALLOW_HEADER = ['content-type']
 REST_FRAME = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
+        'rest_framework_simplejwt.authentication.JWTAuthentication'
     ]
 }

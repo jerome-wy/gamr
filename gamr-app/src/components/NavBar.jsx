@@ -36,7 +36,9 @@ export default function NavBar() {
 				<h2>gamr </h2>
 
 				<div className='navitems-avatar'>
-					<IoPersonCircleOutline size={30} />
+					<Link to='/userhome'>
+						<IoPersonCircleOutline size={30} />
+					</Link>
 				</div>
 			</IconContext.Provider>
 		</div>

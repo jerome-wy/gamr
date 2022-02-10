@@ -108,6 +108,13 @@ div.cover-div > img {
 	margin-bottom: 0.3em;
 }
 
+.SignIn-container > h2 {
+	font-family: Roboto;
+	font-size: 1.5em;
+	font-style: italic;
+	margin-top: -1em;
+}
+
 .signin-text {
 	font-size: 0.7rem;
 	font-family: Roboto;
@@ -144,14 +151,14 @@ div.cover-div > img {
 	background-color: green;
 	color: white;
 	transition: 0.7s;
-	width: 100%;
+	width: 95%;
 }
 
 .signin-signup-btn {
 	background-color: rgb(56, 56, 240);
 	color: white;
 	border-radius: 0.25em;
-	width: 100%;
+	width: 11em;
 	border: solid 1px lightgray;
 	font-family: Roboto;
 	font-weight: bold;
@@ -164,7 +171,7 @@ div.cover-div > img {
 	background-color: green;
 	color: white;
 	transition: 0.7s;
-	width: 150%;
+	width: 20em;
 	border: transparent;
 }
 

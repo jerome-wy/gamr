@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaGoogle, FaFacebook, FaTwitch } from 'react-icons/fa';
+import { IoGameController } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import SignUp from './SignUp';
 
@@ -10,7 +11,12 @@ export default function SignIn(props) {
 
 	return (
 		<div className='SignIn-container'>
-			<h1>gamr</h1>
+			<h1>
+				<IoGameController />
+				<br />
+				procrastigamr
+			</h1>
+			<h2>So many games, so little time</h2>
 			<form onSubmit={handleSubmit}>
 				<div className='signin-input-username-div'>
 					<input

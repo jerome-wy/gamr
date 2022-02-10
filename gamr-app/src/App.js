@@ -14,7 +14,7 @@ import Home from './pages/Home';
 import UserHome from './components/UserHome';
 
 function App() {
-	const [loggedIn, setLoggedIn] = useState(false);
+	const [loggedIn, setLoggedIn] = useState(true);
 
 	return (
 		<div className='App'>
