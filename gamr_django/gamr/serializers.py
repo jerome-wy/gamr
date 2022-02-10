@@ -17,7 +17,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'games', 'games_url', 'username',
-                  'password', 'first_name', 'last_name')
+                  'password', 'first_name', 'last_name', 'email')
 
 
 class GameSerializer(serializers.HyperlinkedModelSerializer):

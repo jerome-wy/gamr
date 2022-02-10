@@ -3,7 +3,7 @@ import { FaGoogle, FaFacebook, FaTwitch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import SignUp from './SignUp';
 
-export default function SignIn() {
+export default function SignIn(props) {
 	const handleChange = (e) => {};
 
 	const handleSubmit = (e) => {};
@@ -43,9 +43,13 @@ export default function SignIn() {
 			<div className='signin-line-divider'></div>
 
 			{/* <div className='signin-input-username-div'> */}
-			<Link to='/signup'>
-				<button className='signin-signup-btn'>Sign Up Here</button>
-			</Link>
+			{/* <Link to='/signup'> */}
+			<button
+				className='signin-signup-btn'
+				onClick={() => props.history.push(`/signup`)}>
+				Sign Up Here
+			</button>
+			{/* </Link> */}
 			{/* </div> */}
 			<div className='social-auth-icons-container'>
 				<div className='social-auth-icons'>

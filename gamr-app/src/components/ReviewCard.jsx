@@ -11,11 +11,11 @@ export default function ReviewCard(props) {
 				<p>Description: {props.description}</p>
 				<div className='reviews-pencil-icon'>
 					<button
-						onClick={() =>
+						onClick={() => {
 							props.history.push(
-								`/gamedetails/${props.game_id}/reviews/${props.match.params.id}/reviewupdate`
-							)
-						}>
+								`/gamedetails/${props.match.params.id}/reviewcreate`
+							);
+						}}>
 						<IoPencilSharp />
 					</button>
 				</div>

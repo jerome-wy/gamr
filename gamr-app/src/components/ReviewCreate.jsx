@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 export default function ReviewCreate(props) {
 	const [review, setReview] = useState({
 		game_id: parseInt(props.match.params.id),
-		rating: 0,
+		user_id: parseInt(1),
+		rating: parseInt(0),
 		title: '',
 		description: '',
 	});
@@ -14,6 +15,7 @@ export default function ReviewCreate(props) {
 		e.preventDefault();
 		const writeReview = {
 			game_id: parseInt(props.match.params.id),
+			user_id: parseInt(1),
 			rating: parseInt(review.rating),
 			title: review.title,
 			description: review.description,
@@ -22,12 +24,13 @@ export default function ReviewCreate(props) {
 
 		let clearReview = {
 			game_id: parseInt(props.match.params.id),
-			rating: 0,
+			user_id: parseInt(1),
+			rating: parseInt(0),
 			title: '',
 			description: '',
 		};
 		setReview(clearReview);
-		props.history.push(`/gamedetails/${review.game_id}/reviews/${review.id}`);
+		props.history.push(`/gamedetails/${review.game_id}/`);
 	};
 
 	const handleChangeReview = (e) => {
@@ -68,10 +71,10 @@ export default function ReviewCreate(props) {
 					<b>Rating:</b>
 					<input
 						className='review-create-title-input'
-						type='number'
+						type='integer'
 						placeholder='Please enter a rating for the game'
 						name='rating'
-						value={review.rating}
+						value={parseInt(review.rating)}
 						onChange={handleChangeReview}
 					/>
 					<br />

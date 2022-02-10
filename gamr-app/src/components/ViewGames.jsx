@@ -1,8 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import GameCard from './GameCard';
+import ViewReviews from './ViewReviews';
 
 export default function GameDetails(props) {
+	const [display, setDisplay] = useState(false);
 	const [games, setGames] = useState([]);
 
 	useEffect(() => {
@@ -15,7 +17,7 @@ export default function GameDetails(props) {
 	console.log(games);
 
 	return (
-		<div className='GameDetails-container'>
+		<div className='ViewGames-container'>
 			{games.map((game) => (
 				<GameCard
 					key={game.id}
@@ -25,6 +27,8 @@ export default function GameDetails(props) {
 					onClick={() => props.history.push(`/gamedetails/${game.id}`)}
 				/>
 			))}
+
+			{!display ? '' : <ViewReviews {...props} {...games} />}
 		</div>
 	);
 }

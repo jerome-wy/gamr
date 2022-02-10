@@ -17,26 +17,26 @@ export default function NavBar() {
 				value={{ style: { margin: '10px', color: '#4b5c6b' } }}>
 				<div className='navitems-div'>
 					<Link to='/'>
-						<IoHome size={40} />
+						<IoHome size={30} />
 					</Link>
 
 					<Link to='/viewgames/'>
-						<IoGameControllerSharp size={40} />
+						<IoGameControllerSharp size={30} />
 					</Link>
 
 					<Link to='/about'>
-						<IoHelpCircleSharp size={40} />
+						<IoHelpCircleSharp size={30} />
 					</Link>
 
 					<Link to='/search'>
-						<IoSearchSharp size={40} />
+						<IoSearchSharp size={30} />
 					</Link>
 				</div>
 
 				<h2>gamr </h2>
 
 				<div className='navitems-avatar'>
-					<IoPersonCircleOutline size={40} />
+					<IoPersonCircleOutline size={30} />
 				</div>
 			</IconContext.Provider>
 		</div>
