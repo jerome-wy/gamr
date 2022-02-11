@@ -3,47 +3,27 @@ from rest_framework import serializers
 from .models import User, Game, Review, Platform, Genre
 
 
-class UserSerializer(serializers.ModelSerializer):
-    games = serializers.HyperlinkedRelatedField(
-        view_name='game_detail',
-        many=True,
-        read_only=True
-    )
+class GameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Game
+        fields = ['id', 'title', 'description', 'release_date',
+                  'developer', 'storage_req', 'trailer', 'cover']
 
-    games_url = serializers.ModelSerializer.serializer_url_field(
-        view_name='game_detail'
-    )
+
+class UserSerializer(serializers.ModelSerializer):
+    games = GameSerializer(many=True, read_only=True)
 
     class Meta:
         model = User
-        fields = ('id', 'games', 'games_url', 'username',
-                  'password', 'first_name', 'last_name', 'email')
+        fields = ['id', 'username', 'password',
+                  'email', 'first_name', 'last_name', 'games']
 
-
-class GameSerializer(serializers.ModelSerializer):
-    user = serializers.HyperlinkedRelatedField(
-        view_name='user_detail',
-        read_only=True
-    )
-
-    user_id = serializers.PrimaryKeyRelatedField(
-        queryset=User.objects.all(),
-        source='user'
-    )
-
-    game_url = serializers.ModelSerializer.serializer_url_field(
-        view_name='game_detail'
-    )
-
-    # reviews = serializers.PrimaryKeyRelatedField(
-    #     queryset=Review.objects.all(),
-    #     source='review'
-    # )
-
-    class Meta:
-        model = Game
-        fields = ('id', 'user', 'user_id', 'game_url',
-                  'title', 'description', 'release_date', 'developer', 'storage_req', 'trailer', 'cover')
+    # def create(self, validated_data):
+    #     games_data = validated_data.pop('games')
+    #     user = User.objects.create(**validated_data)
+    #     for game_data in games_data:
+    #         Game.objects.create(user=user, **game_data)
+    #     return user
 
 
 class GenreSerializer(serializers.HyperlinkedModelSerializer):
