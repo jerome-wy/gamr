@@ -22,13 +22,27 @@ function App() {
 			<Switch>
 				Hello from App.js!
 				<Route>
-					<Route exact path='/' component={Home} />
+					{/* <Route exact path='/' component={Home} /> */}
 					<Route exact path='/userhome' component={UserHome} />
-					<Route path='/signin' component={SignIn} />
+
+					<Route
+						exact
+						path='/'
+						component={(props) => (
+							<SignIn
+								{...props}
+								loggedIn={loggedIn}
+								setLoggedIn={setLoggedIn}
+							/>
+						)}
+					/>
+
 					<Route path='/signup' component={SignUp} />
 
 					<Route path='/viewgames' component={ViewGames} />
+
 					<Route exact path='/gamedetails/:id' component={GameDetails} />
+
 					<Route
 						exact
 						path='/gamedetails/:id/reviews/'
@@ -42,7 +56,6 @@ function App() {
 						path='/gamedetails/:id/reviewupdate/'
 						component={ReviewUpdate}
 					/>
-					<Route path='/gamedetails/:id/reviews/' component={ReviewCard} />
 				</Route>
 			</Switch>
 		</div>

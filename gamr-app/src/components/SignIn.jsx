@@ -5,9 +5,15 @@ import { Link } from 'react-router-dom';
 import SignUp from './SignUp';
 
 export default function SignIn(props) {
+	const { loggedIn, setLoggedIn } = props;
+	console.log(props);
+
 	const handleChange = (e) => {};
 
-	const handleSubmit = (e) => {};
+	const handleSubmit = (e) => {
+		setLoggedIn(false);
+		props.history.push(`/userhome`);
+	};
 
 	return (
 		<div className='SignIn-container'>
