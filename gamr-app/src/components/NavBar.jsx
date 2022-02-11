@@ -10,7 +10,7 @@ import {
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 
-export default function NavBar() {
+export default function NavBar(props) {
 	return (
 		<div className='NavBar-container'>
 			<IconContext.Provider

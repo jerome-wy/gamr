@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ViewGames from './ViewGames';
 import UserDetails from './UserDetails';
+import NavBar from './NavBar';
 
 import {
 	IoHome,
@@ -15,6 +16,7 @@ import { useParams } from 'react-router-dom';
 import { FaUserSecret } from 'react-icons/fa';
 
 export default function UserHome(props) {
+	const { loggedIn, setLoggedIn } = props;
 	const [users, setUsers] = useState([]);
 
 	useEffect(() => {
@@ -25,7 +27,10 @@ export default function UserHome(props) {
 		getUsers();
 	}, [props.match.params.id]);
 
-	console.log(users);
+	function showNavBar() {
+		setLoggedIn(true);
+	}
+
 	return (
 		<div className='UserHome-container'>
 			<div className='userhome-div'>

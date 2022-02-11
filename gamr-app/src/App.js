@@ -18,12 +18,30 @@ function App() {
 
 	return (
 		<div className='App'>
-			{!loggedIn ? <NavBar /> : ''}
+			{loggedIn ? (
+				<NavBar
+					component={(props) => (
+						<NavBar {...props} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+					)}
+				/>
+			) : (
+				''
+			)}
 			<Switch>
 				Hello from App.js!
 				<Route>
 					{/* <Route exact path='/' component={Home} /> */}
-					<Route exact path='/userhome' component={UserHome} />
+					<Route
+						exact
+						path='/userhome'
+						component={(props) => (
+							<UserHome
+								{...props}
+								loggedIn={loggedIn}
+								setLoggedIn={setLoggedIn}
+							/>
+						)}
+					/>
 
 					<Route
 						exact
