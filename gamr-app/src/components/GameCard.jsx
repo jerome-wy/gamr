@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function GameCard(props) {
-	const { games, setGames } = props;
-
 	// console.log('From gamecard --> platforms: ', platforms);
 	return (
 		<div className='GameCard-container'>

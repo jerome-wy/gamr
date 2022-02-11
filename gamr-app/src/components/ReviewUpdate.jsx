@@ -1,22 +1,16 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 
-export default function ReviewCreate(props) {
-	const [updatedReview, setUpdatedReview] = useState({
-		game_id: parseInt(`${props.match.params.id}`),
-		user_id: parseInt(1),
-		rating: parseInt(0),
-		title: '',
-		description: '',
-	});
+export default function ReviewUpdate(props) {
+	const [updatedReview, setUpdatedReview] = useState({});
 	const [updated, setUpdated] = useState(false);
 
-	console.log('these are the props from ReviewCard: ', props);
+	console.log(props);
 
 	const handleSubmitUpdate = async (e) => {
 		e.preventDefault();
 		const updateReview = {
-			game_id: parseInt(`${props.match.params.id}`),
+			// game_id: parseInt(`${props.match.params.id}`),
 			user_id: parseInt(1),
 			rating: parseInt(updatedReview.rating),
 			title: updatedReview.title,
@@ -27,7 +21,7 @@ export default function ReviewCreate(props) {
 			updateReview
 		);
 		let clearReview = {
-			game_id: parseInt(props.match.params.id),
+			// game_id: parseInt(props.match.params.id),
 			user_id: parseInt(1),
 			rating: parseInt(0),
 			title: '',

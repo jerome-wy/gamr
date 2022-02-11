@@ -1,9 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 
 export default function UserGames(props) {
-	const { users, setUsers } = props;
-	console.log(users);
+	const { users, games } = props;
 
-	return <div className='UserGames-container'></div>;
+	if (games[1] === undefined) {
+		return <h1>Now Loading!!!!!!!!!!!</h1>;
+	} else {
+		return (
+			<div className='UserGames-container'>
+				<img src={props.cover} />
+				<br />
+				<b>{props.title}</b>
+				<br />
+				Release Date: {props.release_date}
+			</div>
+		);
+	}
 }

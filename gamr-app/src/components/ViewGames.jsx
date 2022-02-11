@@ -27,7 +27,7 @@ export default function GameDetails(props) {
 					rating={game.rating}
 					games={games}
 					setGames={setGames}
-					onClick={() => props.push(`/gamedetails/${game.id}`)}
+					onClick={() => props.history.push(`/gamedetails/${game.id}`)}
 				/>
 			))}
 

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar';
@@ -15,18 +16,31 @@ import UserHome from './components/UserHome';
 
 function App() {
 	const [loggedIn, setLoggedIn] = useState(true);
+	const [users, setUsers] = useState([]);
+
+	useEffect(() => {
+		const getUsers = async () => {
+			const res = await axios.get('http://localhost:8000/users');
+			setUsers(res.data);
+			console.log(res.data);
+		};
+		getUsers();
+	}, []);
+
+	console.log(users);
+	// const user1 = users[1].games;
 
 	return (
 		<div className='App'>
-			{loggedIn ? (
-				<NavBar
-					component={(props) => (
-						<NavBar {...props} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-					)}
-				/>
-			) : (
+			{/* {loggedIn ? ( */}
+			<NavBar
+				component={(props) => (
+					<NavBar {...props} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+				)}
+			/>
+			{/* ) : (
 				''
-			)}
+			)} */}
 			<Switch>
 				Hello from App.js!
 				<Route>
@@ -39,6 +53,8 @@ function App() {
 								{...props}
 								loggedIn={loggedIn}
 								setLoggedIn={setLoggedIn}
+								users={users}
+								setUsers={setUsers}
 							/>
 						)}
 					/>
@@ -57,7 +73,7 @@ function App() {
 
 					<Route path='/signup' component={SignUp} />
 
-					<Route path='/viewgames' component={ViewGames} />
+					<Route exact path='/viewgames' component={ViewGames} />
 
 					<Route exact path='/gamedetails/:id' component={GameDetails} />
 
@@ -71,7 +87,7 @@ function App() {
 						component={ReviewCreate}
 					/>
 					<Route
-						path='/gamedetails/:id/reviewupdate/'
+						path='/gamedetails/:id/reviews/:id/reviewupdate'
 						component={ReviewUpdate}
 					/>
 				</Route>

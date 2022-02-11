@@ -70,6 +70,10 @@ class Platform(models.Model):
 class Game(models.Model):
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='games', null=True)
+    genre = models.ForeignKey(
+        Genre, on_delete=models.CASCADE, related_name='games', null=True)
+    platform = models.ForeignKey(
+        Platform, on_delete=models.CASCADE, related_name='games', null=True)
     genres = models.ManyToManyField(Genre)
     platforms = models.ManyToManyField(Platform)
     title = models.CharField(max_length=50)

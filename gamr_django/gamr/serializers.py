@@ -10,15 +10,6 @@ class GameSerializer(serializers.ModelSerializer):
                   'developer', 'storage_req', 'trailer', 'cover']
 
 
-class UserSerializer(serializers.ModelSerializer):
-    games = GameSerializer(many=True, read_only=True)
-
-    class Meta:
-        model = User
-        fields = ['id', 'username', 'password',
-                  'email', 'first_name', 'last_name', 'games']
-
-
 class GenreSerializer(serializers.ModelSerializer):
     games = GameSerializer(many=True, read_only=True)
 
@@ -28,17 +19,42 @@ class GenreSerializer(serializers.ModelSerializer):
 
 
 class PlatformSerializer(serializers.ModelSerializer):
-    games = GameSerializer(many=True, read_only=True)
     genres = GenreSerializer(many=True, read_only=True)
+    games = GameSerializer(many=True, read_only=True)
+
+    # game_id = serializers.PrimaryKeyRelatedField(
+    #     queryset=Game.objects.all()
+    #     name='game'
+    # )
 
     class Meta:
         model = Platform
-        fields = ['id', 'games', 'genres', 'platform']
+        fields = ['id', 'platform', 'genres', 'games']
+
+
+class UserSerializer(serializers.ModelSerializer):
+    games = GameSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'password',
+                  'email', 'first_name', 'last_name', 'games']
 
 
 class ReviewSerializer(serializers.ModelSerializer):
     games = GameSerializer(many=True, read_only=True)
 
+    game_id = serializers.PrimaryKeyRelatedField(
+        queryset=Game.objects.all(),
+        source='game'
+    )
+
+    user_id = serializers.PrimaryKeyRelatedField(
+        queryset=User.objects.all(),
+        source='user'
+    )
+
     class Meta:
         model = Review
-        fields = ['id', 'rating', 'title', 'description', 'games']
+        fields = ['id', 'game_id', 'user_id',
+                  'rating', 'title', 'description', 'games']
