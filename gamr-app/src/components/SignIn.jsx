@@ -63,6 +63,7 @@ export default function SignIn(props) {
 			</button>
 			{/* </Link> */}
 			{/* </div> */}
+
 			<div className='social-auth-icons-container'>
 				<div className='social-auth-icons'>
 					<span className='signin-text'>or login with</span>

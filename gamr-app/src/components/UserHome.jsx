@@ -30,20 +30,25 @@ export default function UserHome(props) {
 		<div className='UserHome-container'>
 			<div className='userhome-div'>
 				<IoPersonCircleOutline size={300} color={'gray'} />
-				{users.map((user) => (
-					<div className='userhome-details'>
-						<UserDetails
-							key={user.id}
-							{...users}
-							username={user.username}
-							password={user.password}
-							confirmpassword={user.confirmpassword}
-							first_name={user.first_name}
-							last_name={user.last_name}
-							email={user.email}
-						/>
-					</div>
-				))}
+				{users
+					.filter((user) => {
+						return user.email;
+					})
+					.map((user) => (
+						<div className='userhome-details'>
+							<UserDetails
+								key={user.id}
+								{...users}
+								{...props}
+								username={user.username}
+								password={user.password}
+								confirmpassword={user.confirmpassword}
+								first_name={user.first_name}
+								last_name={user.last_name}
+								email={user.email}
+							/>
+						</div>
+					))}
 			</div>
 
 			<ViewGames />

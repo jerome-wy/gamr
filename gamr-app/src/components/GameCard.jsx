@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export default function GameCard(props) {
+	const { games, setGames } = props;
 	const [platforms, setPlatforms] = useState([]);
 
-	console.log('From gamecard: ', props);
+	console.log('From gamecard: ', games);
 
 	useEffect(() => {
 		const getPlatforms = async () => {
@@ -23,8 +24,9 @@ export default function GameCard(props) {
 				</div>
 				<div className='game-card-details' key={props.id}>
 					<h3>{props.title}</h3>
-					<h4>XB1, XSX, PC:</h4> {props.platforms}
-					<h4>9/10</h4> {props.rating}
+					<h4>Release Date: {props.release_date}</h4>
+					<h4>Platforms: XB1, XSX, PC</h4>
+					<h4>Rating: 9/10</h4> {props.rating}
 				</div>
 			</div>
 		</div>
