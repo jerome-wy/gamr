@@ -3,94 +3,46 @@ from rest_framework import serializers
 from .models import User, Game, Review, Platform, Genre
 
 
-class UserSerializer(serializers.ModelSerializer):
-    games = serializers.HyperlinkedRelatedField(
-        view_name='game_detail',
-        many=True,
-        read_only=True
-    )
-
-    games_url = serializers.ModelSerializer.serializer_url_field(
-        view_name='game_detail'
-    )
-
-    class Meta:
-        model = User
-        fields = ('id', 'games', 'games_url', 'username',
-                  'password', 'first_name', 'last_name', 'email')
-
-
 class GameSerializer(serializers.ModelSerializer):
-    user = serializers.HyperlinkedRelatedField(
-        view_name='user_detail',
-        read_only=True
-    )
-
-    user_id = serializers.PrimaryKeyRelatedField(
-        queryset=User.objects.all(),
-        source='user'
-    )
-
-    game_url = serializers.ModelSerializer.serializer_url_field(
-        view_name='game_detail'
-    )
-
-    # reviews = serializers.PrimaryKeyRelatedField(
-    #     queryset=Review.objects.all(),
-    #     source='review'
-    # )
-
     class Meta:
         model = Game
-        fields = ('id', 'user', 'user_id', 'game_url',
-                  'title', 'description', 'release_date', 'developer', 'storage_req', 'trailer', 'cover')
+        fields = ['id', 'title', 'description', 'release_date',
+                  'developer', 'storage_req', 'trailer', 'cover']
 
 
-class GenreSerializer(serializers.HyperlinkedModelSerializer):
-    game = serializers.HyperlinkedRelatedField(
-        view_name='game_detail',
-        read_only=True
-    )
-
-    game_id = serializers.PrimaryKeyRelatedField(
-        queryset=Game.objects.all(),
-        source='game'
-    )
-
-    game_url = serializers.ModelSerializer.serializer_url_field(
-        view_name='game_detail'
-    )
+class GenreSerializer(serializers.ModelSerializer):
+    games = GameSerializer(many=True, read_only=True)
 
     class Meta:
         model = Genre
-        fields = ('id', 'game', 'game_id', 'game_url', 'genre')
+        fields = ['id', 'genre', 'games']
 
 
-class PlatformSerializer(serializers.HyperlinkedModelSerializer):
-    genres = serializers.HyperlinkedRelatedField(
-        view_name='genre_detail',
-        read_only=True
-    )
+class PlatformSerializer(serializers.ModelSerializer):
+    genres = GenreSerializer(many=True, read_only=True)
+    games = GameSerializer(many=True, read_only=True)
 
     # game_id = serializers.PrimaryKeyRelatedField(
-    #     queryset=Game.objects.all(),
-    #     source='game'
+    #     queryset=Game.objects.all()
+    #     name='game'
     # )
-
-    genre_url = serializers.ModelSerializer.serializer_url_field(
-        view_name='genre_detail'
-    )
 
     class Meta:
         model = Platform
-        fields = ('id', 'genres', 'genre_url', 'platform')
+        fields = ['id', 'platform', 'genres', 'games']
 
 
-class ReviewSerializer(serializers.HyperlinkedModelSerializer):
-    game = serializers.HyperlinkedRelatedField(
-        view_name='game_detail',
-        read_only=True
-    )
+class UserSerializer(serializers.ModelSerializer):
+    games = GameSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'password',
+                  'email', 'first_name', 'last_name', 'games']
+
+
+class ReviewSerializer(serializers.ModelSerializer):
+    games = GameSerializer(many=True, read_only=True)
 
     game_id = serializers.PrimaryKeyRelatedField(
         queryset=Game.objects.all(),
@@ -104,5 +56,5 @@ class ReviewSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Review
-        fields = ('id', 'game', 'game_id', 'rating',
-                  'user_id', 'title', 'description')
+        fields = ['id', 'game_id', 'user_id',
+                  'rating', 'title', 'description', 'games']

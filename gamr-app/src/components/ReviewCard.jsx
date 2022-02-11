@@ -1,12 +1,11 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { FaWindows } from 'react-icons/fa';
+import ReviewUpdate from './ReviewUpdate';
 import { IoPencilSharp, IoTrash } from 'react-icons/io5';
 
 export default function ReviewCard(props) {
-	const [refresh, setRefresh] = useState(true);
-
-	console.log('PROPS FROM REVIEW CARD :', props);
+	const [refresh, setRefresh] = useState(false);
 
 	const deleteReview = async () => {
 		let deletePrompt = prompt(
@@ -20,16 +19,21 @@ export default function ReviewCard(props) {
 		window.location.reload();
 	};
 
+	console.log(props);
+
 	return (
 		<div className='ReviewCard-container'>
 			<div className='review-card-details' key={props.game_id}>
 				{/* Game ID: {props.game_id} */}
 				<h3>Title: {props.title}</h3>
 				<p>Description: {props.description}</p>
+
 				<div className='reviews-pencil-icon'>
 					<button
 						onClick={() => {
-							props.history.push(`/gamedetails/${props.game_id}/reviewupdate`);
+							props.history.push(
+								`/gamedetails/${props.game_id}/reviews/${props.id}/reviewupdate`
+							);
 						}}>
 						<IoPencilSharp />
 					</button>
@@ -39,6 +43,13 @@ export default function ReviewCard(props) {
 					</button>
 				</div>
 			</div>
+
+			<ReviewUpdate
+				{...props}
+				id={props.id}
+				reviews={props.reviews}
+				style={{ display: 'none' }}
+			/>
 		</div>
 	);
 }

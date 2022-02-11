@@ -156,9 +156,9 @@ LOGIN_REDIRECT_URL = '/'
 
 CORS_ALLOW_HEADER = ['content-type']
 
-REST_FRAME = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-        'rest_framework_simplejwt.authentication.JWTAuthentication'
-    ]
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.AllowAny',
+#         'rest_framework_simplejwt.authentication.JWTAuthentication'
+#     ]
+# }
