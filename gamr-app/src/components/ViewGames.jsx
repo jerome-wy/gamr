@@ -14,7 +14,7 @@ export default function GameDetails(props) {
 		};
 		getGames();
 	}, []);
-	console.log(games);
+	console.log(props);
 
 	return (
 		<div className='ViewGames-container'>
@@ -27,7 +27,7 @@ export default function GameDetails(props) {
 					rating={game.rating}
 					games={games}
 					setGames={setGames}
-					onClick={() => props.history.push(`/gamedetails/${game.id}`)}
+					onClick={() => props.push(`/gamedetails/${game.id}`)}
 				/>
 			))}
 

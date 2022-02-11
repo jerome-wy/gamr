@@ -5,7 +5,7 @@ export default function GameCard(props) {
 	const { games, setGames } = props;
 	const [platforms, setPlatforms] = useState([]);
 
-	console.log('From gamecard: ', games);
+	// console.log('From gamecard: ', games);
 
 	useEffect(() => {
 		const getPlatforms = async () => {
@@ -15,7 +15,7 @@ export default function GameCard(props) {
 		getPlatforms();
 	}, []);
 
-	console.log('From gamecard --> platforms: ', platforms);
+	// console.log('From gamecard --> platforms: ', platforms);
 	return (
 		<div className='GameCard-container'>
 			<div className='game-card' onClick={props.onClick}>

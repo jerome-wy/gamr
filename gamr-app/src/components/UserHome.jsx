@@ -18,6 +18,7 @@ import { FaUserSecret } from 'react-icons/fa';
 export default function UserHome(props) {
 	const { loggedIn, setLoggedIn } = props;
 	const [users, setUsers] = useState([]);
+	const [games, setGames] = useState([]);
 
 	useEffect(() => {
 		const getUsers = async () => {
@@ -27,18 +28,25 @@ export default function UserHome(props) {
 		getUsers();
 	}, [props.match.params.id]);
 
+	useEffect(() => {
+		const getGames = async () => {
+			const res = await axios.get('http://localhost:8000/games');
+			setUsers(res.data);
+		};
+		getGames();
+	}, [props.match.params.id]);
+
 	function showNavBar() {
 		setLoggedIn(true);
 	}
 
+	showNavBar();
 	return (
 		<div className='UserHome-container'>
 			<div className='userhome-div'>
 				<IoPersonCircleOutline size={300} color={'gray'} />
 				{users
-					.filter((user) => {
-						return user.email;
-					})
+					.filter((user) => {})
 					.map((user) => (
 						<div className='userhome-details'>
 							<UserDetails
@@ -51,6 +59,7 @@ export default function UserHome(props) {
 								first_name={user.first_name}
 								last_name={user.last_name}
 								email={user.email}
+								games={user.games}
 							/>
 						</div>
 					))}

@@ -6,11 +6,6 @@ export default function UserDetails(props) {
 		<div className='UserDetails-container'>
 			{props.username}
 			{props.email}
-			{props.username}
-			{props.username}
-			{props.username}
-			{props.username}
-			{props.username}
 		</div>
 	);
 }

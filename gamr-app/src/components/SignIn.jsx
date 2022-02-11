@@ -42,7 +42,7 @@ export default function SignIn(props) {
 				</div>
 
 				<div className='signin-input-username-div'>
-					{/* <Link to='/viewgames'> */}
+					{/* <Link to= */}
 					<button className='signin-btn'>Sign In</button>
 					{/* </Link> */}
 				</div>
