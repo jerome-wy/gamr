@@ -8,11 +8,18 @@ export default function UserGames(props) {
 	} else {
 		return (
 			<div className='UserGames-container'>
-				<img src={props.cover} />
-				<br />
-				<b>{props.title}</b>
-				<br />
-				Release Date: {props.release_date}
+				<div className='usergames-cover'>
+					<img src={props.cover} />
+				</div>
+
+				<div className='usergames-info'>
+					<h2>{props.title}</h2>
+					<h3>
+						<b>Release Date: </b>
+						{props.release_date}
+					</h3>
+					<span> {props.description}</span>
+				</div>
 			</div>
 		);
 	}

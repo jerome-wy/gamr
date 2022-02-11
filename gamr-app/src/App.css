@@ -1,5 +1,6 @@
 body {
 	margin: 0;
+	overflow: hidden;
 	/* background-color: black;
 	color: white; */
 }
@@ -9,9 +10,13 @@ body {
 
 /* NAVBAR ----------------- */
 .NavBar-container {
-	margin: 0;
-	display: flex;
-	justify-content: space-evenly;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: 'a b c';
+	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
+	justify-items: center;
 	align-items: center;
 	align-content: center;
 	height: 3rem;
@@ -21,8 +26,8 @@ body {
 }
 
 .NavBar-container > h2 {
-	font-family: 'Teko';
-	font-size: 3rem;
+	font-family: 'Roboto';
+	font-size: 2rem;
 	/* position: ; */
 }
 
@@ -259,14 +264,66 @@ div.game-card-details > b {
 /* USERHOME --------------- */
 .UserHome-container {
 	display: grid;
-	grid-template-columns: 1fr 5fr;
+	grid-template-columns: 1fr 3fr;
+	justify-content: center;
+	justify-items: center;
+	align-content: center;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
 }
 
-.userhome-div {
-	border-right: solid 1px gray;
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-content: center;
-	justify-content: center;
+/* USERDETAILS --------*/
+.UserDetails-container {
+	font-family: Roboto;
+}
+
+.userdetails-keys {
+}
+
+/* USER GAMES -------------- */
+
+.userhome-usergames-div {
+	margin-left: 2em;
+	overflow-y: scroll;
+}
+
+.userGames-container {
+	display: grid;
+	grid-template-columns: 1fr 5fr;
+	grid-template-rows: 1fr;
+	border-left: solid 1px lightgray;
+	margin: 2em;
+	font-family: roboto;
+}
+
+.usergames-info {
+	margin-left: 1em;
+}
+
+.usergames-info > h2 {
+	margin-top: 0.2em;
+}
+
+.usergames-info > h3 {
+	margin-top: -0.6em;
+}
+
+.usergames-cover {
+	/* width: 500px; */
+}
+
+.usergames-cover > img {
+	margin-top: 0.4em;
+	width: 100%;
+}
+
+.userhome-usergames-div > h1,
+h2 {
+	font-family: Roboto;
+}
+
+.userhome-line {
+	width: 80rem;
+	border-bottom: solid 1px gray;
 }

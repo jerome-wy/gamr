@@ -33,12 +33,20 @@ export default function UserHome(props) {
 	} else {
 		return (
 			<div className='UserHome-container'>
-				<div className='userhome-div'>
+				<div className='userhome-userdetails-div'>
 					<IoPersonCircleOutline size={300} color={'gray'} />
 					<UserDetails key={users.id} {...props} />
 				</div>
 
-				<div>
+				<div className='userhome-usergames-div'>
+					<h1>
+						Stop procrastinating on these games,{' '}
+						<span>{users[1].first_name}</span>!
+					</h1>
+					<h2>
+						TOTAL GAMES: <span>{users[1].games.length}</span>
+					</h2>
+					<div className='userhome-line'></div>
 					{games.map((game) => (
 						<UserGames
 							key={game.id}
