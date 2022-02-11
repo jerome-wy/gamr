@@ -3,7 +3,7 @@ from rest_framework import serializers
 from .models import User, Game, Review, Platform, Genre
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     games = serializers.HyperlinkedRelatedField(
         view_name='game_detail',
         many=True,
@@ -11,7 +11,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     )
 
     games_url = serializers.ModelSerializer.serializer_url_field(
-        view_name='user_detail'
+        view_name='game_detail'
     )
 
     class Meta:
@@ -20,7 +20,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
                   'password', 'first_name', 'last_name', 'email')
 
 
-class GameSerializer(serializers.HyperlinkedModelSerializer):
+class GameSerializer(serializers.ModelSerializer):
     user = serializers.HyperlinkedRelatedField(
         view_name='user_detail',
         read_only=True

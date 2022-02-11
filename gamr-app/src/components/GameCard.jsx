@@ -3,17 +3,6 @@ import axios from 'axios';
 
 export default function GameCard(props) {
 	const { games, setGames } = props;
-	const [platforms, setPlatforms] = useState([]);
-
-	// console.log('From gamecard: ', games);
-
-	useEffect(() => {
-		const getPlatforms = async () => {
-			const res = await axios.get('http://localhost:8000/platforms');
-			setPlatforms(res.data);
-		};
-		getPlatforms();
-	}, []);
 
 	// console.log('From gamecard --> platforms: ', platforms);
 	return (
