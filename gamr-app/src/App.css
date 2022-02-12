@@ -33,27 +33,58 @@ body {
 
 /* GAMEDETAILS ------------ */
 .GameDetails-container {
-	width: 75%;
 	height: 100vh;
 	display: flex;
-	flex-wrap: wrap;
 	margin: 0 auto;
+	width: 50%;
+	align-content: center;
+	border: solid 1px blue;
+	font-family: Roboto;
 }
 
-.game-details-cover {
-	width: 200px;
-	height: 275px;
+.gamedetails-cover {
 	border: solid 1px red;
 }
 
 .gamedetails-cover > img {
-	width: 210x;
-	height: 275px;
-	margin: 1rem;
+	float: left;
+	vertical-align: middle;
+	/* width: 25%; */
+	height: 35%;
+	margin: 1em 1em 0 1em;
+	border-right: solid 1px lightgray;
+	padding-right: 2em;
 }
 
+.gamedetails-cover > ul {
+	/* display: ; */
+	/* grid-template-columns: 1fr; */
+	margin-right: 10em;
+	margin-left: 15.2em;
+	/* border: solid 1px black; */
+	list-style: none;
+}
+
+.gamedetails-cover > ul > li {
+	display: flex;
+	padding: 0.1em;
+	margin: 0.25em;
+}
+
+.gamedetails-cover > ul > li > span {
+	display: flex;
+	justify-content: space-between;
+}
 .gamedetails-cover > h2 {
-	margin-bottom: 0;
+}
+
+.gamedetails-cover > h3 {
+	font-family: Roboto;
+	margin-top: -0.5em;
+}
+
+.gamedetails-info {
+	border: solid 1px green;
 }
 
 .ViewGames-container {
@@ -215,7 +246,7 @@ div.cover-div > img {
 	width: 100%;
 }
 
-li {
+.social-auth-list {
 	list-style: none;
 	display: inline;
 	margin: 1em;
@@ -270,7 +301,7 @@ div.game-card-details > b {
 	align-content: center;
 	height: 100vh;
 	width: 100vw;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 /* USERDETAILS --------*/
@@ -294,7 +325,9 @@ div.game-card-details > b {
 	grid-template-rows: 1fr;
 	border-left: solid 1px lightgray;
 	margin: 2em;
+	margin-right: 20em;
 	font-family: roboto;
+	width: 70em;
 }
 
 .usergames-info {
