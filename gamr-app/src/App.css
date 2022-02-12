@@ -1,6 +1,6 @@
 body {
 	margin: 0;
-	overflow: hidden;
+	/* overflow: hidden; */
 	/* background-color: black;
 	color: white; */
 }
@@ -35,23 +35,26 @@ body {
 .GameDetails-container {
 	height: 100vh;
 	display: flex;
+	flex-direction: column;
 	margin: 0 auto;
-	width: 50%;
 	align-content: center;
 	border: solid 1px blue;
 	font-family: Roboto;
+	/* width: 80vw; */
 }
 
 .gamedetails-cover {
-	border: solid 1px red;
+	margin-left: 10em;
+	margin-right: 10em;
+	/* border: solid 1px red; */
 }
 
 .gamedetails-cover > img {
 	float: left;
 	vertical-align: middle;
 	/* width: 25%; */
-	height: 35%;
-	margin: 1em 1em 0 1em;
+	height: 80%;
+	margin: 1em;
 	border-right: solid 1px lightgray;
 	padding-right: 2em;
 }
@@ -59,8 +62,7 @@ body {
 .gamedetails-cover > ul {
 	/* display: ; */
 	/* grid-template-columns: 1fr; */
-	margin-right: 10em;
-	margin-left: 15.2em;
+	margin-left: 9.8em;
 	/* border: solid 1px black; */
 	list-style: none;
 }
@@ -316,10 +318,9 @@ div.game-card-details > b {
 
 .userhome-usergames-div {
 	margin-left: 2em;
-	overflow-y: scroll;
+	/* overflow-y: scroll; */
 }
-
-.userGames-container {
+7 .userGames-container {
 	display: grid;
 	grid-template-columns: 1fr 5fr;
 	grid-template-rows: 1fr;
@@ -359,4 +360,34 @@ h2 {
 .userhome-line {
 	width: 80rem;
 	border-bottom: solid 1px gray;
+}
+
+/* VIEWREVIEWS / REVIEWCARD---------------- */
+.ReviewForm-container {
+	background-color: #4b5c6b;
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	margin: 0 auto;
+}
+
+.ReviewForm-container > h1 {
+	font-family: Roboto;
+	text-align: center;
+	align-items: center;
+}
+
+.review-div {
+	/* border: solid 5px yellow; */
+	margin: 0 auto;
+	width: 40vw;
+}
+
+.ReviewCard-container {
+	border-bottom: solid 1px lightgray;
+}
+
+.reviews-pencil-icon {
+	background: none;
+	border: 0;
 }

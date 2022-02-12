@@ -16,6 +16,7 @@ export default function GameDetails(props) {
 	}, [props.match.params.id]);
 	console.log(gameDetails);
 
+	console.log(props);
 	return (
 		<div className='GameDetails-container'>
 			<div className='gamedetails-cover'>
@@ -50,6 +51,7 @@ export default function GameDetails(props) {
 					</li>
 				</ul>
 			</div>
+			<ViewReviews {...props} />
 		</div>
 	);
 }

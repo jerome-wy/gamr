@@ -28,18 +28,21 @@ export default function ReviewCard(props) {
 				<h3>Title: {props.title}</h3>
 				<p>Description: {props.description}</p>
 
-				<div className='reviews-pencil-icon'>
+				<div className='reviews-pencil-icon-div'>
 					<button
+						className='reviews-pencil-icon'
 						onClick={() => {
 							props.history.push(
 								`/gamedetails/${props.game_id}/reviews/${props.id}/reviewupdate`
 							);
 						}}>
-						<IoPencilSharp />
+						<IoPencilSharp size={20} color={'yellow'} />
 					</button>
 
-					<button onClick={() => deleteReview(props.id)}>
-						<IoTrash />
+					<button
+						className='reviews-pencil-icon'
+						onClick={() => deleteReview(props.id)}>
+						<IoTrash size={20} color={'red'} />
 					</button>
 				</div>
 			</div>
