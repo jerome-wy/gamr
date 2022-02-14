@@ -485,7 +485,7 @@ h2 {
 	font-family: Roboto;
 	height: 2rem;
 	width: 5rem;
-	border-radius: 10px;
+	border-radius: 5px;
 	transition: 0.5s;
 }
 
@@ -493,6 +493,24 @@ h2 {
 	transition: 0.5s;
 	width: 10rem;
 	background-color: green;
+}
+
+.review-update-cancel-btn {
+	background-color: red;
+	border: 0;
+	color: white;
+	font-family: Roboto;
+	height: 1.5em;
+	width: 5rem;
+	border-radius: 5px;
+	transition: 0.5s;
+	margin-top: 0.5em;
+}
+
+.review-update-cancel-btn:hover {
+	transition: 0.5s;
+	width: 10rem;
+	background-color: red;
 }
 
 .review-update-submit-btn-div {

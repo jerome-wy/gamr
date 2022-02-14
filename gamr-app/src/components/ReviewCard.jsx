@@ -52,6 +52,17 @@ export default function ReviewCard(props) {
 		setUpdated(true);
 	};
 
+	const handleCancel = async (e) => {
+		const cancelUpdate = {
+			game_id: parseInt(props.match.params.id),
+			user_id: parseInt(1),
+			rating: parseInt(0),
+			title: '',
+			description: '',
+		};
+		setToggleDisplay(false);
+	};
+
 	const deleteReview = async () => {
 		let deletePrompt = prompt(
 			'Are you sure you want to delete? (Yes or Hit Cancel to go back)'
@@ -125,7 +136,7 @@ export default function ReviewCard(props) {
 								<button type='submit' className='review-update-submit-btn'>
 									Submit
 								</button>
-
+								<br />
 								<button
 									className='review-update-cancel-btn'
 									onClick={handleCancel}>
