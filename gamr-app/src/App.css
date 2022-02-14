@@ -403,15 +403,13 @@ h2 {
 
 .ReviewCard-container {
 	display: grid;
-	grid-template-columns: 3fr 1fr;
+	grid-template-columns: 5fr 1fr;
 	border-bottom: solid 1px lightgray;
 	color: white;
 }
 
 .reviews-pencil-icon-div {
 	text-align: right;
-
-	/* border: solid 1px red; */
 }
 
 .reviews-pencil-icon {
@@ -424,8 +422,24 @@ h2 {
 .reviews-pencil-icon:hover {
 	opacity: 100%;
 	transition: 0.5s;
+}
 
-	/* background: green; */
+.review-card-details > h3 {
+	color: #1aae9f;
+	font-weight: none;
+}
+
+.review-card-details > h3 > span {
+	color: white;
+}
+
+.review-card-details > p > b {
+	color: #1aae9f;
+	font-weight: none;
+}
+
+.review-card-details > p {
+	color: white;
 }
 
 .ReviewCreate-container {
@@ -434,6 +448,7 @@ h2 {
 .ReviewCreate-container > h1 {
 	text-align: center;
 }
+
 .review-create-form {
 	margin: 0 auto;
 	text-align: left;

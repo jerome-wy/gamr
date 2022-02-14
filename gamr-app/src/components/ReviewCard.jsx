@@ -70,8 +70,14 @@ export default function ReviewCard(props) {
 		<div className='ReviewCard-container'>
 			<div className='review-card-details' key={props.game_id}>
 				{/* Game ID: {props.game_id} */}
-				<h3>Title: {props.title}</h3>
-				<p>Description: {props.description}</p>
+				<h3>
+					Title:
+					<span>{props.title}</span>
+				</h3>
+				<p>
+					<b>Description:</b>
+					<br /> <span> {props.description}</span>
+				</p>
 			</div>
 
 			<div className='reviews-pencil-icon-div'>
@@ -118,6 +124,12 @@ export default function ReviewCard(props) {
 							<div className='review-update-submit-btn-div'>
 								<button type='submit' className='review-update-submit-btn'>
 									Submit
+								</button>
+
+								<button
+									className='review-update-cancel-btn'
+									onClick={handleCancel}>
+									Cancel
 								</button>
 							</div>
 						</div>
