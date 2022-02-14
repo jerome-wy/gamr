@@ -16,14 +16,15 @@ export default function ReviewCard(props) {
 	});
 	const [updated, setUpdated] = useState(false);
 	const [editDisplay, setEditDisplay] = useState('review-update-hide');
+	const [toggleDisplay, setToggleDisplay] = useState(false);
 
 	console.log(props);
 
-	const toggleDisplay = () => {
-		editDisplay === 'review-update-hide'
-			? setEditDisplay('review-update-show')
-			: setEditDisplay('review-update-hide');
-	};
+	// const toggleDisplay = () => {
+	// 	editDisplay === 'review-update-hide'
+	// 		? setEditDisplay('review-update-show')
+	// 		: setEditDisplay('review-update-hide');
+	// };
 
 	const handleSubmitUpdate = async (e) => {
 		e.preventDefault();
@@ -80,7 +81,9 @@ export default function ReviewCard(props) {
 			</div>
 
 			<div className='reviews-pencil-icon-div'>
-				<button className='reviews-pencil-icon' onClick={toggleDisplay}>
+				<button
+					className='reviews-pencil-icon'
+					onClick={() => setToggleDisplay(!toggleDisplay)}>
 					<IoPencilSharp size={20} color={'yellow'} />
 				</button>
 
@@ -91,32 +94,36 @@ export default function ReviewCard(props) {
 				</button>
 			</div>
 
-			<form onSubmit={handleSubmitUpdate}>
-				<div className='review-update-show'>
-					<div className='review-create-input-div'></div>
-					<b>Review Title:</b>
-					<input
-						className='review-create-title-input'
-						type='text'
-						placeholder='Please enter a title for your review'
-						name='title'
-						value={updatedReview.title}
-						onChange={handleChangeUpdateReview}
-					/>
-					<br />
-					<b>Review Description: </b>
-					<input
-						className='review-create-descr-input'
-						type='text'
-						placeholder='Tell us how you really feel!'
-						name='description'
-						value={updatedReview.description}
-						onChange={handleChangeUpdateReview}
-					/>
+			{toggleDisplay ? (
+				<form onSubmit={handleSubmitUpdate}>
+					<div className='review-update-show'>
+						<div className='review-create-input-div'></div>
+						<b>Review Title:</b>
+						<input
+							className='review-create-title-input'
+							type='text'
+							placeholder='Please enter a title for your review'
+							name='title'
+							value={updatedReview.title}
+							onChange={handleChangeUpdateReview}
+						/>
+						<br />
+						<b>Review Description: </b>
+						<input
+							className='review-create-descr-input'
+							type='text'
+							placeholder='Tell us how you really feel!'
+							name='description'
+							value={updatedReview.description}
+							onChange={handleChangeUpdateReview}
+						/>
 
-					<button type='submit'>Submit</button>
-				</div>
-			</form>
+						<button type='submit'>Submit</button>
+					</div>
+				</form>
+			) : (
+				''
+			)}
 		</div>
 	);
 }
