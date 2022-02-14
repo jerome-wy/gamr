@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 export default function UserGames(props) {
 	const { users, games } = props;
 	console.log(games);
+
 	if (games[1] === undefined) {
 		return <h1>Now Loading!!!!!!!!!!!</h1>;
 	} else {
