@@ -405,6 +405,7 @@ h2 {
 	display: grid;
 	grid-template-columns: 3fr 1fr;
 	border-bottom: solid 1px lightgray;
+	color: white;
 }
 
 .reviews-pencil-icon-div {
@@ -460,6 +461,28 @@ h2 {
 .review-create-descr-input,
 .review-create-title-input::placeholder {
 	font-family: Roboto;
+}
+
+.review-update-submit-btn {
+	background-color: rgb(56, 56, 240);
+	border: 0;
+	color: white;
+	font-family: Roboto;
+	height: 2rem;
+	width: 5rem;
+	border-radius: 10px;
+	transition: 0.5s;
+}
+
+.review-update-submit-btn:hover {
+	transition: 0.5s;
+	width: 10rem;
+	background-color: green;
+}
+
+.review-update-submit-btn-div {
+	text-align: center;
+	margin-top: 0.5em;
 }
 
 @media all and (max-width: 414px) {
@@ -797,5 +820,30 @@ h2 {
 		width: 15em;
 		height: 0.1em;
 		margin: 1em;
+	}
+
+	.review-update-div {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.review-update-title-input {
+		border: solid 1px lightgray;
+		width: 25rem;
+	}
+
+	.review-update-title-input::placeholder {
+		font-family: Roboto;
+	}
+
+	.review-update-descr-input {
+		border: solid 1px lightgray;
+		width: 25rem;
+		height: 10rem;
+	}
+
+	.review-update-descr-input {
+		font-family: Roboto;
 	}
 }

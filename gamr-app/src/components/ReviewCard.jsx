@@ -91,28 +91,36 @@ export default function ReviewCard(props) {
 			{toggleDisplay ? (
 				<form onSubmit={handleSubmitUpdate}>
 					<div className='review-update-div'>
-						<div className='review-create-input-div'></div>
-						<b>Review Title:</b>
-						<input
-							className='review-create-title-input'
-							type='text'
-							placeholder='Update title'
-							name='title'
-							value={updatedReview.title}
-							onChange={handleChangeUpdateReview}
-						/>
-						<br />
-						<b>Review Description: </b>
-						<input
-							className='review-create-descr-input'
-							type='text'
-							placeholder='Update description'
-							name='description'
-							value={updatedReview.description}
-							onChange={handleChangeUpdateReview}
-						/>
+						<div className='review-update-input-div'>
+							<b>Update Review Title:</b>
+							<br />
+							<input
+								className='review-update-title-input'
+								type='text'
+								placeholder='Update title'
+								name='title'
+								value={updatedReview.title}
+								onChange={handleChangeUpdateReview}
+							/>
+							<br />
+							<br />
 
-						<button type='submit'>Submit</button>
+							<b>Update Description: </b>
+							<br />
+							<input
+								className='review-update-descr-input'
+								type='text'
+								placeholder='Update description'
+								name='description'
+								value={updatedReview.description}
+								onChange={handleChangeUpdateReview}
+							/>
+							<div className='review-update-submit-btn-div'>
+								<button type='submit' className='review-update-submit-btn'>
+									Submit
+								</button>
+							</div>
+						</div>
 					</div>
 				</form>
 			) : (

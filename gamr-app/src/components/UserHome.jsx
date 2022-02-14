@@ -31,7 +31,9 @@ export default function UserHome(props) {
 					<h2>
 						TOTAL GAMES: <span>{users[1].games.length}</span>
 					</h2>
-					<div className='userhome-line'></div>
+					<div className='userhome-line-container'>
+						<div className='userhome-line'></div>
+					</div>
 					{games.map((game) => (
 						<UserGames
 							key={game.id}
