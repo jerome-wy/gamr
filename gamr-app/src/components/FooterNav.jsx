@@ -19,10 +19,10 @@ export default function NavBar(props) {
 		setLoggedIn(!loggedIn);
 	};
 	return (
-		<div className='NavBar-container'>
+		<div className='FooterNav-container'>
 			<IconContext.Provider
-				value={{ style: { margin: '10px', color: '#4b5c6b' } }}>
-				<div className='navitems-div'>
+				value={{ style: { margin: '2px', color: '#4b5c6b' } }}>
+				<div className='footernav-items-div'>
 					<Link to='/'>
 						<IoHome size={30} />
 					</Link>
@@ -38,18 +38,10 @@ export default function NavBar(props) {
 					<Link to='/search'>
 						<IoSearchSharp size={30} />
 					</Link>
-				</div>
 
-				<h2>procrastigamr</h2>
-
-				<div className='navitems-avatar'>
 					<Link to='/userhome'>
 						<IoPersonCircleOutline size={30} />
 					</Link>
-
-					<button className='logout-btn' onClick={handleSubmit}>
-						Logout
-					</button>
 				</div>
 			</IconContext.Provider>
 		</div>

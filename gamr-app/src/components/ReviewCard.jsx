@@ -20,12 +20,6 @@ export default function ReviewCard(props) {
 
 	console.log(props);
 
-	// const toggleDisplay = () => {
-	// 	editDisplay === 'review-update-hide'
-	// 		? setEditDisplay('review-update-show')
-	// 		: setEditDisplay('review-update-hide');
-	// };
-
 	const handleSubmitUpdate = async (e) => {
 		e.preventDefault();
 		const updateReview = {
@@ -96,13 +90,13 @@ export default function ReviewCard(props) {
 
 			{toggleDisplay ? (
 				<form onSubmit={handleSubmitUpdate}>
-					<div className='review-update-show'>
+					<div className='review-update-div'>
 						<div className='review-create-input-div'></div>
 						<b>Review Title:</b>
 						<input
 							className='review-create-title-input'
 							type='text'
-							placeholder='Please enter a title for your review'
+							placeholder='Update title'
 							name='title'
 							value={updatedReview.title}
 							onChange={handleChangeUpdateReview}
@@ -112,7 +106,7 @@ export default function ReviewCard(props) {
 						<input
 							className='review-create-descr-input'
 							type='text'
-							placeholder='Tell us how you really feel!'
+							placeholder='Update description'
 							name='description'
 							value={updatedReview.description}
 							onChange={handleChangeUpdateReview}

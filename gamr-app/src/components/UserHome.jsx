@@ -7,26 +7,11 @@ import { IoPersonCircleOutline } from 'react-icons/io5';
 
 export default function UserHome(props) {
 	const { users } = props;
-
-	// useEffect(() => {
-	// 	if (users === undefined) {
-	// 		return;
-	// 	} else {
-	// 		setGames(users[1].games);
-	// 		// console.log();
-	// 	}
-	// }, []);
-	// console.log(games);
-
 	const [games, setGames] = useState([]);
 
 	useEffect(() => {
 		setGames(users[1].games);
 	}, []);
-
-	// const userGames = users[1].games;
-
-	// console.log(userGames[1].games);
 
 	if (!users || !props || !games) {
 		return <h1>Now loading!</h1>;
@@ -34,7 +19,7 @@ export default function UserHome(props) {
 		return (
 			<div className='UserHome-container'>
 				<div className='userhome-userdetails-div'>
-					<IoPersonCircleOutline size={300} color={'gray'} />
+					<IoPersonCircleOutline size={200} color={'gray'} />
 					<UserDetails key={users.id} {...props} />
 				</div>
 

@@ -5,15 +5,11 @@ body {
 
 .App {
 }
-
 /* NAVBAR ----------------- */
 .NavBar-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-areas: 'a b c';
 	box-sizing: border-box;
-	margin-left: auto;
-	margin-right: auto;
 	justify-items: center;
 	align-items: center;
 	align-content: center;
@@ -27,6 +23,35 @@ body {
 	font-family: 'Roboto';
 	font-size: 2rem;
 	/* position: ; */
+}
+
+.navitems-avatar {
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	align-content: center;
+	margin-left: 10em;
+}
+
+.NavBar-Bottom-container {
+	display: none;
+}
+
+.logout-btn {
+	background: none;
+	border: none;
+	font-family: Roboto;
+	/* margin-left: 2em; */
+	transition: 0.8s;
+	width: 3em;
+	height: 2em;
+}
+
+.logout-btn:hover {
+	background-color: red;
+	border-radius: 10px;
+	transition: 0.8s;
+	width: 8em;
 }
 
 /* GAMEDETAILS ------------ */
@@ -78,7 +103,6 @@ body {
 }
 
 .gamedetails-info {
-	border: solid 1px green;
 }
 
 .ViewGames-container {
@@ -295,13 +319,10 @@ div.game-card-details > b {
 	justify-items: center;
 	align-content: center;
 	height: 100vh;
-	width: 100vw;
-	/* overflow: hidden; */
 }
 
 /* USERDETAILS --------*/
 .UserDetails-container {
-	font-family: Roboto;
 }
 
 .userdetails-keys {
@@ -312,6 +333,7 @@ div.game-card-details > b {
 .userhome-usergames-div {
 	margin-left: 2em;
 	overflow-y: scroll;
+	width: 80vw;
 }
 
 .userGames-container {
@@ -381,7 +403,7 @@ h2 {
 
 .ReviewCard-container {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 3fr 1fr;
 	border-bottom: solid 1px lightgray;
 }
 
@@ -405,18 +427,7 @@ h2 {
 	/* background: green; */
 }
 
-.review-update-hide {
-	display: none;
-}
-
-.review-update-show {
-	margin: 0 auto;
-	text-align: center;
-	margin: 0.5em;
-}
-
 .ReviewCreate-container {
-	border: solid 1px red;
 }
 
 .ReviewCreate-container > h1 {
@@ -524,28 +535,267 @@ h2 {
 	}
 
 	.NavBar-container {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-areas: 'a b c';
-		box-sizing: border-box;
-		margin-left: auto;
-		margin-right: auto;
-		justify-items: center;
+		display: none;
+	}
+
+	.FooterNav-container {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-evenly;
 		align-items: center;
-		align-content: center;
 		height: 3rem;
 		background-color: #8dd7cf;
 		border-top: solid 2px #1aae9f;
 		border-bottom: solid 2px #1aae9f;
+		position: fixed;
+		bottom: 0;
+		width: 100vw;
 	}
 
-	.NavBar-container > h2 {
+	.FooterNav-container > h2 {
 		font-family: 'Roboto';
-		font-size: 1.5rem;
-		/* position: ; */
+		font-size: 2rem;
 	}
 
-	.navitems-div {
-		display: inline-flex;
+	.footernav-items-div {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-evenly;
+		width: 100vw;
+		text-align: center;
+	}
+
+	.footernav-items-avatar {
+		display: flex;
+		justify-items: center;
+		align-items: center;
+		align-content: center;
+	}
+
+	.UserHome-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		justify-items: center;
+		align-content: center;
+		height: 100vh;
+		/* width: 100vw; */
+		/* overflow: hidden; */
+	}
+
+	/* USERDETAILS --------*/
+	.UserDetails-container {
+		font-family: Roboto;
+	}
+
+	.userhome-userdetails-div {
+		text-align: center;
+	}
+
+	.userdetails-keys {
+		text-align: left;
+		margin: 1em;
+	}
+
+	/* USER GAMES -------------- */
+
+	.userhome-usergames-div {
+		margin-left: 0;
+		overflow-y: none;
+		width: 100vw;
+	}
+
+	.userGames-container {
+		display: flex;
+		flex-direction: column;
+		margin: 0em;
+		font-family: roboto;
+		width: 100%;
+	}
+
+	.usergames-info {
+		margin-left: 1em;
+	}
+
+	.usergames-info > h2 {
+		margin-top: 0.2em;
+	}
+
+	.usergames-info > h3 {
+		margin-top: -0.6em;
+	}
+
+	.usergames-cover {
+		text-align: center;
+	}
+
+	.usergames-cover > img {
+		margin-top: 0.4em;
+		width: 50%;
+		border-radius: 10px;
+		box-shadow: 6px 6px #8dd7cf;
+	}
+
+	.userhome-usergames-div > h1 {
+		font-family: Roboto;
+		font-size: 1.5em;
+		text-align: center;
+	}
+
+	.userhome-usergames-div > h1 > span {
+		color: #1aae9f;
+	}
+
+	.userhome-usergames-div > h2 {
+		font-size: 1em;
+		margin: 1em;
+	}
+
+	.userhome-usergames-div > h2 > span {
+		color: red;
+	}
+
+	.userhome-line {
+		text-align: center;
+		width: 22rem;
+		border-bottom: solid 1px gray;
+	}
+
+	.SignIn-container {
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		height: 100vh;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	.SignIn-container > h1 {
+		font-family: Roboto;
+		font-size: 3.5rem;
+		font-weight: bold;
+		margin-bottom: 0.3em;
+	}
+
+	.SignIn-container > h2 {
+		font-family: Roboto;
+		font-size: 1rem;
+		font-style: italic;
+		margin-top: -1em;
+	}
+
+	.signin-text {
+		font-size: 0.7rem;
+		font-family: Roboto;
+		font-weight: bold;
+	}
+
+	.signin-input-username {
+		border: solid 1px lightgray;
+		border-radius: 0.25em;
+		padding: 0.6em;
+		margin: 0.25em;
+		width: 300px;
+		height: 35px;
+	}
+
+	.signin-input-username::placeholder {
+		color: lightgray;
+	}
+
+	.signin-btn {
+		background-color: black;
+		color: white;
+		border-radius: 0.25em;
+		width: 50%;
+		border: solid 1px lightgray;
+		font-family: Roboto;
+		font-weight: bold;
+		transition: 0.7s;
+		margin: 0.4em;
+		height: 35px;
+	}
+
+	.signin-btn:hover {
+		background-color: green;
+		color: white;
+		transition: 0.7s;
+		width: 95%;
+	}
+
+	.signin-signup-btn {
+		background-color: rgb(56, 56, 240);
+		color: white;
+		border-radius: 0.25em;
+		width: 11em;
+		border: solid 1px lightgray;
+		font-family: Roboto;
+		font-weight: bold;
+		transition: 0.7s;
+		margin: 0.4em;
+		height: 35px;
+	}
+
+	.signin-signup-btn:hover {
+		background-color: green;
+		color: white;
+		transition: 0.7s;
+		width: 20em;
+		border: transparent;
+	}
+
+	.signup-btn {
+		background-color: black;
+		color: white;
+		border-radius: 0.25em;
+		width: 50%;
+		border: solid 1px lightgray;
+		font-family: Roboto;
+		font-weight: bold;
+		transition: 0.7s;
+		margin: 0.4em;
+		height: 35px;
+	}
+
+	.signup-btn:hover {
+		background-color: rgb(47, 47, 240);
+		color: white;
+		transition: 0.7s;
+		width: 100%;
+		border: transparent;
+	}
+
+	.signin-input-username-div {
+		font-family: Roboto;
+		font-weight: bold;
+		font-size: 0.5em;
+		width: 100%;
+	}
+
+	.social-auth-icons-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		width: 100%;
+	}
+
+	.social-auth-list {
+		list-style: none;
+		display: inline;
+		margin: 1em;
+		padding: 0;
+	}
+
+	.social-auth-icons > ul {
+		padding: 0;
+		list-style-type: none;
+	}
+
+	.signin-line-divider {
+		background-color: lightgray;
+		width: 15em;
+		height: 0.1em;
+		margin: 1em;
 	}
 }

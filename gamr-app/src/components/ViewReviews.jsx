@@ -6,11 +6,7 @@ import ReviewUpdate from './ReviewUpdate';
 import { IoAddCircle } from 'react-icons/io5';
 
 export default function ViewReview(props) {
-	// const [updated, SetUpdated] = useState(false);
-
-	// const [review, setReview] = useState({});
 	const [reviews, setReviews] = useState([]);
-	// const [reviewIndex, setReviewIndex] = useState(0);
 
 	useEffect(() => {
 		const getReviews = async () => {

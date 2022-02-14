@@ -11,11 +11,11 @@ import ReviewUpdate from './components/ReviewUpdate';
 import ReviewCard from './components/ReviewCard';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
-import Home from './pages/Home';
+import FooterNav from './components/FooterNav';
 import UserHome from './components/UserHome';
 
 function App() {
-	const [loggedIn, setLoggedIn] = useState(true);
+	const [loggedIn, setLoggedIn] = useState(false);
 	const [users, setUsers] = useState([]);
 
 	useEffect(() => {
@@ -32,15 +32,29 @@ function App() {
 
 	return (
 		<div className='App'>
-			{/* {loggedIn ? ( */}
-			<NavBar
-				component={(props) => (
-					<NavBar {...props} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
-				)}
-			/>
-			{/* ) : (
+			{loggedIn ? (
+				<NavBar
+					component={(props) => (
+						<NavBar {...props} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+					)}
+				/>
+			) : (
 				''
-			)} */}
+			)}
+
+			{loggedIn ? (
+				<FooterNav
+					component={(props) => (
+						<FooterNav
+							{...props}
+							loggedIn={loggedIn}
+							setLoggedIn={setLoggedIn}
+						/>
+					)}
+				/>
+			) : (
+				''
+			)}
 			<Switch>
 				Hello from App.js!
 				<Route>

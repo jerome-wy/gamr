@@ -11,8 +11,8 @@ export default function SignIn(props) {
 	const handleChange = (e) => {};
 
 	const handleSubmit = (e) => {
-		setLoggedIn(false);
 		props.history.push(`/userhome`);
+		setLoggedIn(!loggedIn);
 	};
 
 	return (
@@ -42,9 +42,9 @@ export default function SignIn(props) {
 				</div>
 
 				<div className='signin-input-username-div'>
-					{/* <Link to= */}
-					<button className='signin-btn'>Sign In</button>
-					{/* </Link> */}
+					<button className='signin-btn' type='submit'>
+						Sign In
+					</button>
 				</div>
 
 				<div className='signin-input-username-div'>
