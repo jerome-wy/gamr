@@ -16,6 +16,7 @@ export default function GameDetails(props) {
 	}, [props.match.params.id]);
 	console.log(gameDetails);
 
+	console.log(props);
 	return (
 		<div className='GameDetails-container'>
 			<div className='gamedetails-cover'>
@@ -26,24 +27,33 @@ export default function GameDetails(props) {
 						props.history.push(`/gamedetails/${gameDetails.id}/reviews/`)
 					}
 				/>
-				{gameDetails.title}
-				<br />
-				{gameDetails.rating}
-				<br />
-				{gameDetails.description}
-				<br />
 			</div>
 
-			<div className='gamedetails-expanded'>
-				<div className='rating'>Rating: {gameDetails.rating}</div>
-				<div className='trailer'>Trailer: {gameDetails.trailer}</div>
-				<div className='release'>Release Date: {gameDetails.release_date}</div>
-				<div className='platform'>Platform: {gameDetails.platform}</div>
-				<div className='developer'>Developer: {gameDetails.developer}</div>
-				<div className='storage'>
-					Storage Requirements: {gameDetails.storage_req}
-				</div>
+			<div className='gamedetails-cover2'>
+				<h2>{gameDetails.title}</h2>
+				<h3>Rating: {gameDetails.rating}</h3>
+				{gameDetails.description}
+				<ul>
+					<li>
+						<b>Trailer: </b> Embedded Video coming soon! See it on
+						<a href={gameDetails.trailer}> YouTube</a>!
+					</li>
+					<li>
+						<b>Release Date: </b>
+						{gameDetails.release_date}
+					</li>
+					<li>
+						<b>Platform:</b> {gameDetails.platform}
+					</li>
+					<li>
+						<b>Developer:</b> {gameDetails.developer}
+					</li>
+					<li>
+						<b>Storage Requirements:</b> {gameDetails.storage_req}
+					</li>
+				</ul>
 			</div>
+			<ViewReviews {...props} />
 		</div>
 	);
 }

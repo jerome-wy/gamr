@@ -69,15 +69,17 @@ export default function SignIn(props) {
 					<span className='signin-text'>or login with</span>
 					<br />
 					<br />
-					<li>
-						<FaGoogle size={50} />
-					</li>
-					<li>
-						<FaFacebook size={50} />
-					</li>
-					<li>
-						<FaTwitch size={50} />
-					</li>
+					<ul>
+						<li className='social-auth-list'>
+							<FaGoogle size={50} />
+						</li>
+						<li className='social-auth-list'>
+							<FaFacebook size={50} />
+						</li>
+						<li className='social-auth-list'>
+							<FaTwitch size={50} />
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>

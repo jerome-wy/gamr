@@ -50,57 +50,45 @@ export default function ReviewCreate(props) {
 	console.log(review);
 	return (
 		<div className='ReviewCreate-container'>
-			<form onSubmit={submitReview}>
-				<div className='review-create-title'>
-					<div className='review-create-input-div'>
-						<b>Posted By: </b>
+			<h1>Write a Review!</h1>
+			<form className='review-create-form' onSubmit={submitReview}>
+				<b>Rating:</b>
+				<br />
+				<input
+					className='review-create-title-input'
+					type='number'
+					placeholder='Please enter a rating for the game'
+					name='rating'
+					value={parseInt(review.rating)}
+					onChange={handleChangeReview}
+				/>
+				<br />
 
-						{/* <input
-							className='review-create-title-input'
-							type='text'
-							placeholder='Please enter a title for your review'
-							name='game_id'
-							value={review.game_id}
-							onChange={handleChangeReview}
-						/>
-						<br /> */}
-					</div>
+				<b>Review Title:</b>
+				<br />
+				<input
+					className='review-create-title-input'
+					type='text'
+					placeholder='Please enter a title for your review'
+					name='title'
+					value={review.title}
+					onChange={handleChangeReview}
+				/>
+				<br />
 
-					<div className='review-create-input-div'></div>
+				<b>Review Description: </b>
+				<br />
+				<input
+					className='review-create-descr-input'
+					type='text'
+					placeholder='Tell us how you really feel!'
+					name='description'
+					value={review.description}
+					onChange={handleChangeReview}
+				/>
+				<br />
 
-					<b>Rating:</b>
-					<input
-						className='review-create-title-input'
-						type='integer'
-						placeholder='Please enter a rating for the game'
-						name='rating'
-						value={parseInt(review.rating)}
-						onChange={handleChangeReview}
-					/>
-					<br />
-
-					<b>Review Title:</b>
-					<input
-						className='review-create-title-input'
-						type='text'
-						placeholder='Please enter a title for your review'
-						name='title'
-						value={review.title}
-						onChange={handleChangeReview}
-					/>
-					<br />
-					<b>Review Description: </b>
-					<input
-						className='review-create-descr-input'
-						type='text'
-						placeholder='Tell us how you really feel!'
-						name='description'
-						value={review.description}
-						onChange={handleChangeReview}
-					/>
-
-					<button type='submit'>Submit</button>
-				</div>
+				<button type='submit'>Submit</button>
 			</form>
 		</div>
 	);

@@ -6,6 +6,7 @@ import {
 	IoSearchSharp,
 	IoPersonCircleOutline,
 	IoLogoInstagram,
+	IoGameController,
 } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
@@ -33,7 +34,7 @@ export default function NavBar(props) {
 					</Link>
 				</div>
 
-				<h2>gamr </h2>
+				<h2>procrastigamr</h2>
 
 				<div className='navitems-avatar'>
 					<Link to='/userhome'>

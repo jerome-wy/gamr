@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import ReviewCard from './ReviewCard';
 import ReviewUpdate from './ReviewUpdate';
+import { IoAddCircle } from 'react-icons/io5';
 
 export default function ViewReview(props) {
 	// const [updated, SetUpdated] = useState(false);
@@ -23,15 +24,17 @@ export default function ViewReview(props) {
 
 	return (
 		<div className='ReviewForm-container'>
-			<h2
-				onClick={() => {
-					props.history.push(
-						`/gamedetails/${props.match.params.id}/reviewcreate`
-					);
-				}}>
-				Write a Review!
-			</h2>
-			<h2>REVIEWS</h2>
+			<h1>
+				REVIEWS
+				<IoAddCircle
+					size={40}
+					onClick={() => {
+						props.history.push(
+							`/gamedetails/${props.match.params.id}/reviewcreate`
+						);
+					}}
+				/>
+			</h1>
 			{reviews
 				.filter((review) => {
 					return review.game_id === parseInt(props.match.params.id);
