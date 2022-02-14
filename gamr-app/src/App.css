@@ -1,8 +1,6 @@
 body {
 	margin: 0;
-	/* overflow: hidden; */
-	/* background-color: black;
-	color: white; */
+	font-family: Roboto;
 }
 
 .App {
@@ -34,49 +32,43 @@ body {
 /* GAMEDETAILS ------------ */
 .GameDetails-container {
 	height: 100vh;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	margin: 0 auto;
 	align-content: center;
-	border: solid 1px blue;
 	font-family: Roboto;
 	/* width: 80vw; */
 }
 
 .gamedetails-cover {
-	margin-left: 10em;
-	margin-right: 10em;
-	/* border: solid 1px red; */
+	margin: 0 auto;
 }
 
 .gamedetails-cover > img {
 	float: left;
-	vertical-align: middle;
-	/* width: 25%; */
-	height: 80%;
+	border-radius: 10px;
 	margin: 1em;
-	border-right: solid 1px lightgray;
-	padding-right: 2em;
 }
 
 .gamedetails-cover > ul {
 	/* display: ; */
 	/* grid-template-columns: 1fr; */
-	margin-left: 9.8em;
+	/* margin-left: 9.8em; */
 	/* border: solid 1px black; */
 	list-style: none;
 }
 
 .gamedetails-cover > ul > li {
-	display: flex;
+	/* display: flex; */
 	padding: 0.1em;
 	margin: 0.25em;
 }
 
 .gamedetails-cover > ul > li > span {
-	display: flex;
-	justify-content: space-between;
+	/* display: flex; */
+	/* justify-content: space-between; */
 }
+
 .gamedetails-cover > h2 {
 }
 
@@ -101,6 +93,7 @@ body {
 div.cover-div > img {
 	width: 150px;
 	height: 200px;
+	border-radius: 10px;
 	margin: 1rem;
 }
 
@@ -114,7 +107,7 @@ div.cover-div > img {
 	border: solid 1px lightgray;
 	min-width: 16rem;
 	max-width: 16rem;
-	height: 20rem;
+	height: 21rem;
 }
 
 .game-card-details > h3 {
@@ -318,13 +311,14 @@ div.game-card-details > b {
 
 .userhome-usergames-div {
 	margin-left: 2em;
-	/* overflow-y: scroll; */
+	overflow-y: scroll;
 }
-7 .userGames-container {
+
+.userGames-container {
 	display: grid;
 	grid-template-columns: 1fr 5fr;
 	grid-template-rows: 1fr;
-	border-left: solid 1px lightgray;
+	/* border-left: solid 1px lightgray; */
 	margin: 2em;
 	margin-right: 20em;
 	font-family: roboto;
@@ -350,6 +344,8 @@ div.game-card-details > b {
 .usergames-cover > img {
 	margin-top: 0.4em;
 	width: 100%;
+	border-radius: 10px;
+	box-shadow: 6px 6px #8dd7cf;
 }
 
 .userhome-usergames-div > h1,
@@ -384,11 +380,172 @@ h2 {
 }
 
 .ReviewCard-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	border-bottom: solid 1px lightgray;
-	display gri
+}
+
+.reviews-pencil-icon-div {
+	text-align: right;
+
+	/* border: solid 1px red; */
 }
 
 .reviews-pencil-icon {
-	background: none;
+	background: #4b5c6b;
 	border: 0;
+	opacity: 25%;
+	transition: 0.5s;
+}
+
+.reviews-pencil-icon:hover {
+	opacity: 100%;
+	transition: 0.5s;
+
+	/* background: green; */
+}
+
+.review-update-hide {
+	display: none;
+}
+
+.review-update-show {
+	margin: 0 auto;
+	text-align: center;
+	margin: 0.5em;
+}
+
+.ReviewCreate-container {
+	border: solid 1px red;
+}
+
+.ReviewCreate-container > h1 {
+	text-align: center;
+}
+.review-create-form {
+	margin: 0 auto;
+	text-align: left;
+	width: 40vw;
+}
+
+.review-create-title-input {
+	border: solid 1px lightgray;
+	border-radius: 0.25em;
+	padding: 0.6em;
+	margin: 0.25em;
+	width: 300px;
+	height: 35px;
+}
+
+.review-create-descr-input {
+	border: solid 1px lightgray;
+	border-radius: 0.25em;
+	padding: 0.6em;
+	margin: 0.25em;
+	width: 40em;
+	height: 10em;
+}
+
+.review-create-descr-input,
+.review-create-title-input::placeholder {
+	font-family: Roboto;
+}
+
+@media all and (max-width: 414px) {
+	.GameDetails-container {
+		justify-items: center;
+		height: 100vh;
+		width: 100vw;
+	}
+	.gamedetails-cover {
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.gamedetails-cover2 {
+		margin: 1em;
+	}
+	.gamedetails-cover2 > ul {
+		margin-left: -2.5em;
+		list-style: none;
+	}
+
+	.gamedetails-cover2 > ul > li {
+		padding: 0;
+		margin: 0em;
+	}
+
+	.gamedetails-cover > ul > li > span {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.gamedetails-cover > h2 {
+		text-align: center;
+	}
+
+	.gamedetails-cover > h3 {
+		font-family: Roboto;
+		margin-top: -0.5em;
+		margin-left: 0;
+	}
+
+	.gamedetails-info {
+	}
+
+	.ReviewForm-container {
+		background-color: #4b5c6b;
+		display: flex;
+		flex-direction: column;
+		width: 100vw;
+		/* height: 100vh; */
+	}
+
+	.ReviewForm-container > h1 {
+		font-family: Roboto;
+		text-align: center;
+		align-items: center;
+	}
+
+	.review-div {
+		/* border: solid 5px yellow; */
+		margin: 0 auto;
+		width: 90vw;
+		margin-right: 2em;
+	}
+
+	.ReviewCard-container {
+		border-bottom: solid 1px lightgray;
+	}
+
+	.reviews-pencil-icon {
+		background: none;
+		border: 0;
+	}
+
+	.NavBar-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas: 'a b c';
+		box-sizing: border-box;
+		margin-left: auto;
+		margin-right: auto;
+		justify-items: center;
+		align-items: center;
+		align-content: center;
+		height: 3rem;
+		background-color: #8dd7cf;
+		border-top: solid 2px #1aae9f;
+		border-bottom: solid 2px #1aae9f;
+	}
+
+	.NavBar-container > h2 {
+		font-family: 'Roboto';
+		font-size: 1.5rem;
+		/* position: ; */
+	}
+
+	.navitems-div {
+		display: inline-flex;
+	}
 }

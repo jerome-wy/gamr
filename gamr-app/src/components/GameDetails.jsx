@@ -27,7 +27,9 @@ export default function GameDetails(props) {
 						props.history.push(`/gamedetails/${gameDetails.id}/reviews/`)
 					}
 				/>
+			</div>
 
+			<div className='gamedetails-cover2'>
 				<h2>{gameDetails.title}</h2>
 				<h3>Rating: {gameDetails.rating}</h3>
 				{gameDetails.description}
