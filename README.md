@@ -7,7 +7,8 @@
 ## **Author:** **Jerome Wy** [LinkedIn](https://www.linkedin.com/in/jerome-wy/) | [GitHub](https://github.com/jerome-wy)
 
 ## **Description:**
-gamr is a Full Stack Web Application that uses Python with the Django Framework for the Back-End and uses React and React Libraries for the Front-End. 
+
+gamr is a Full Stack Web Application that uses Python with the Django Framework for the Back-End and uses React and React Libraries for the Front-End.
 
 ## **Technologies Used:**
 
@@ -17,9 +18,6 @@ gamr is a Full Stack Web Application that uses Python with the Django Framework 
 - Django
 - PostgreSQL
 - Node.js
-- Sequelize
-- Bcrypt
-- Jsonwebtoken
 
 **Front-End:**
 
@@ -27,17 +25,13 @@ gamr is a Full Stack Web Application that uses Python with the Django Framework 
 - CSS3
 - JavaScript ES6
 - React.js
-- Bootstrap
-- Tailwind
 
 **React Libraries:**
-- React-Icons       
-- React-Recharts
-- React-Toastify
-- Semantic UI
+
+- React-Icons
 
 **Applications:**
-- Adobe Photoshop
+
 - Whimsical
 - Lucid Chart
 
@@ -48,7 +42,6 @@ gamr is a Full Stack Web Application that uses Python with the Django Framework 
 ![Image]()
 
 ### **SignUp Page**:
-
 
 ![Image]()
 

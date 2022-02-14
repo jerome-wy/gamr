@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { IoGameController } from 'react-icons/io5';
 
 export default function SignUp(props) {
 	const [user, setUser] = useState({
@@ -47,7 +49,12 @@ export default function SignUp(props) {
 
 	return (
 		<div className='SignIn-container'>
-			<h1>gamr</h1>
+			<h1>
+				<IoGameController />
+				<br />
+				procrastigamr
+			</h1>
+			<h2>So many games, so little time</h2>
 			<form onSubmit={handleSubmit}>
 				<div className='signin-input-username-div'>
 					<input
@@ -120,7 +127,9 @@ export default function SignUp(props) {
 				</div>
 
 				<div className='signin-input-username-div'>
-					<button className='cancel-btn'>Cancel</button>
+					<Link to='/'>
+						<button className='cancel-btn'>Cancel</button>
+					</Link>
 				</div>
 			</form>
 		</div>

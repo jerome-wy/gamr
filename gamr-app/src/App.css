@@ -271,7 +271,7 @@ div.cover-div > img {
 	margin: 1em;
 }
 
-.signin-line-divider {
+.social-auth-f .signin-line-divider {
 	background-color: lightgray;
 	width: 15em;
 	height: 0.1em;
@@ -516,6 +516,10 @@ h2 {
 .review-update-submit-btn-div {
 	text-align: center;
 	margin-top: 0.5em;
+}
+
+.FooterNav-container {
+	display: none;
 }
 
 @media all and (max-width: 414px) {

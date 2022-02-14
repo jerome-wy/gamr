@@ -13,6 +13,7 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import FooterNav from './components/FooterNav';
 import UserHome from './components/UserHome';
+import About from './pages/About';
 
 function App() {
 	const [loggedIn, setLoggedIn] = useState(false);
@@ -104,6 +105,8 @@ function App() {
 						path='/gamedetails/:id/reviews/:id/reviewupdate'
 						component={ReviewUpdate}
 					/>
+
+					<Route exact path='/about' component={About} />
 				</Route>
 			</Switch>
 		</div>
