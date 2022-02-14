@@ -11,6 +11,33 @@ export default function About(props) {
 			the game I am looking for.
 			<br />
 			<br />
+			<b>Technologies Used:</b>
+			<ul>
+				<li>
+					<b>Backend:</b> <span>Python + Django Rest Framework</span>
+				</li>
+				<ul>
+					<li>Full CRUD Functionality</li>
+					<li>
+						Models include database relationships between User, Games, and
+						Reviews
+					</li>
+					<li>Serializers used to setup backend views</li>
+				</ul>
+				<li>
+					<b>Frontend:</b> <span>React (HTML5, CSS3, JavaScript)</span>
+					<ul>
+						<li>This app was built using React.js</li>
+						<li>useState and useEffect were utilized to manage state</li>
+						<li>
+							All styling is completely coded using CSS with no external
+							libraries or styled components
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<br />
+			<br />
 			<b>Future functionalities:</b>
 			<ul>
 				<li>Authentication:</li>

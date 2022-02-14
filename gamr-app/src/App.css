@@ -522,6 +522,18 @@ h2 {
 	display: none;
 }
 
+.About-container {
+	margin: 2em auto;
+	width: 50vw;
+	border: solid 0.1px lightgray;
+	padding: 1em;
+	border-radius: 5px;
+	box-shadow: 10px 10px #4b5c6b;
+}
+
+.About-container > h1 {
+	text-align: center;
+}
 @media all and (max-width: 414px) {
 	.GameDetails-container {
 		justify-items: center;
