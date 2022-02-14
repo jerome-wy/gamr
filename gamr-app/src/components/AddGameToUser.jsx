@@ -14,13 +14,7 @@ export default function AddGameToUser (props) {
     const submitReview = (e) => {
         e.preventDefault();
         const addGame = {
-        title: '',
-        description: '',
-        release_date: '',
-        developer: '',
-        storage_req: '',
-        trailer: '',
-        cover: ''
+
         }
     }
 }
